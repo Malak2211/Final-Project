@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const goToSignup = () => {
+    navigate("/signup");
+  };
 
   return(
     <div  className="container">
@@ -35,7 +41,7 @@ const Login = () => {
       </div>
       <div  className="msg">
 
-        <div className="Sign Up">New Here?<span className="to" type="link" >Create an Account!</span></div>
+        <div className="Sign Up">New Here?<span onClick={goToSignup}className="to" type="link" >Create an Account!</span></div>
       </div>
 
       </div>
