@@ -60,7 +60,7 @@
     border: none;
     background: transparent;
     outline: none;
-    color: #797979;
+    color: #000000;
     font-size: 18px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 
-.to{
+.navigatetosignup{
     color: #84ca01;
     cursor:pointer;
 }
@@ -118,11 +118,12 @@
     width: 220px;
     height: 59px;
     color: #fff;
-    background-color: #84ca01;
+    /* color: #84ca01; */
     border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    border: none;
 }
 
 

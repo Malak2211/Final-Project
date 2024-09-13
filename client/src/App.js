@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './Items/Login';
 import Signup from './Items/Signup';
+import Home from './Items/home'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './Items/designforlogin.css';
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<Signup />}/>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>

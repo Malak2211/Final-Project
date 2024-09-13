@@ -1,8 +1,24 @@
-import React from 'react';
 import { useNavigate } from "react-router-dom";
-
+import { Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import axios from 'axios';
 const Signup = () => {
   const navigate = useNavigate();
+  const[name,setName] = useState()
+  const[email,setEmail] = useState()
+  const[pwd,setPwd] = useState()
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+  }
+    axios.post('http://localhost:3001/api/signup',{name,email,pwd:pwd})
+    .then(result => {
+      console.log(result);
+      if (result.data === "Success") {
+        navigate('/home');
+      }
+    })
+    .catch(err => console.log(err));
+  
 
   const goToLogin = () => {
     navigate("/login");
@@ -14,26 +30,30 @@ const Signup = () => {
           <div  className="text">Sign Up</div>
           <div  className="underline"></div>
         </div>
-        <div className="inputs">
+        <div onSubmit={handleSubmit} className="inputs">
             <div className="input">
             <img src="./icons/persoon.jfif" alt="user_icon" className="image" />
             <input  type="text" 
                     id="username"  
-                    placeholder="Name"/>
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className="input">
             <img src="./icons/email.png" alt="email_icon" className="image" />
-            <input type="email" placeholder="Email id" />
+            <input type="email" 
+                    placeholder="Email" 
+                    id="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="input">
             <img src="./icons/lockk.png" alt="lock_icon" className="image" /> 
             <input  type="password" 
                     placeholder="Password"
-                    id="password"/> 
-            </div>
-            <div className="input">
-            <img src="./icons/lockk.png" alt="lock_icon" className="image" /> 
-            <input  type="password" placeholder="Confirm Password" />
+                    id="password"
+                    value={pwd}
+                    onChange={(e) => setPwd(e.target.value)}/> 
             </div>
         </div>
         <div className="remember">
@@ -41,11 +61,11 @@ const Signup = () => {
             <label htmlFor="rememberMe">Remember Me</label>
         </div>
         <div className="buttons">
-            <div className="button">Sign Up</div>
+            <Button type="submit" className="button">Sign Up</Button>
 
       </div>
         <div  className="msg">
-                <div className="Login">Already have an Account?<span onClick={goToLogin}className="to" type="link">Login</span></div>
+                <div className="Login">Already have an Account?<span onClick={goToLogin}className="navigatetologin" type="link">Login</span></div>
         </div>
         </div>
     );

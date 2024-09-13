@@ -1,8 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
-
+import { Button } from 'react-bootstrap';
+import axios from "axios";
 const Login = () => {
   const navigate = useNavigate();
+  const[email,setEmail] = useState()
+  const[pwd,setPwd] = useState()
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    axios.post('http://localhost:3001/login',{email,pwd:pwd})
+    .then(result => {
+      console.log(result);
+      if (result.data === "Success") {
+        navigate('/home');
+      }
+    })
+    .catch(err => console.log(err));
+  }
 
   const goToSignup = () => {
     navigate("/signup");
@@ -16,18 +30,22 @@ const Login = () => {
         <div  className="underline"></div>
       </div>
    
-      <div className="inputs">
+      <div onSubmit={handleSubmit} className="inputs">
 
 
         <div className="input">
         <img src="./icons/email.png" alt="email_icon" className="image" />
-          <input type="email" placeholder="Email id" />
+          <input type="email" placeholder="Email"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="input">
          <img src="./icons/lockk.png" alt="lock_icon" className="image" /> 
           <input  type="password" 
                   placeholder="Password"
-                  id="password"/> 
+                  id="password"
+                  value={pwd}
+                  onChange={(e) => setPwd(e.target.value)}/> 
         </div>
       </div>
 
@@ -36,12 +54,12 @@ const Login = () => {
 
       
       <div className="buttons">
-      <div className="button">Login</div>
+      <Button type="submit" className="button">Login</Button>
 
       </div>
       <div  className="msg">
 
-        <div className="Sign Up">New Here?<span onClick={goToSignup}className="to" type="link" >Create an Account!</span></div>
+        <div className="Sign Up">New Here?<span onClick={goToSignup}className="navigatetosignup" type="link" >Create an Account!</span></div>
       </div>
 
       </div>
