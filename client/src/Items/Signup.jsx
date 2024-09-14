@@ -9,7 +9,6 @@ const Signup = () => {
   const[pwd,setPwd] = useState()
   const handleSubmit = (e) =>{
     e.preventDefault()
-  }
     axios.post('http://localhost:3001/api/signup',{name,email,pwd:pwd})
     .then(result => {
       console.log(result);
@@ -18,6 +17,7 @@ const Signup = () => {
       }
     })
     .catch(err => console.log(err));
+  }
   
 
   const goToLogin = () => {
@@ -30,7 +30,7 @@ const Signup = () => {
           <div  className="text">Sign Up</div>
           <div  className="underline"></div>
         </div>
-        <div onSubmit={handleSubmit} className="inputs">
+        <form onSubmit={handleSubmit} className="inputs">
             <div className="input">
             <img src="./icons/persoon.jfif" alt="user_icon" className="image" />
             <input  type="text" 
@@ -55,15 +55,14 @@ const Signup = () => {
                     value={pwd}
                     onChange={(e) => setPwd(e.target.value)}/> 
             </div>
-        </div>
         <div className="remember">
             <input type="checkbox" name="" id="rememberMe" />
             <label htmlFor="rememberMe">Remember Me</label>
         </div>
         <div className="buttons">
             <Button type="submit" className="button">Sign Up</Button>
-
-      </div>
+        </div>
+      </form>
         <div  className="msg">
                 <div className="Login">Already have an Account?<span onClick={goToLogin}className="navigatetologin" type="link">Login</span></div>
         </div>
