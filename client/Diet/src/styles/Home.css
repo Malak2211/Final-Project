@@ -1,0 +1,8 @@
+.hero-section {
+    background-image: url('/public/image.jpg'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
+  
