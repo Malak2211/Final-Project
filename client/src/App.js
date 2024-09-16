@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import NavBar from './components/Navbar';
 import Home from './pages/Home';
 import Meals from './pages/Meals';
-import Calories from './pages/Calories';      // Import Calories component
-import SuggestPlan from './pages/SuggestPlan'; // Import SuggestPlan component
-import Exercises from './pages/Exercises';     // Import Exercises component
+import Calories from './pages/Calories';    
+import SuggestPlan from './pages/SuggestPlan'; 
+import Exercises from './pages/Exercises';     
 import Login from './Items/Login';
 import Signup from './Items/Signup';
 import './Items/designforlogin.css';

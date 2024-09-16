@@ -1,4 +1,3 @@
-// src/pages/SuggestPlan.js
 import React from 'react';
 
 const SuggestPlan = () => {

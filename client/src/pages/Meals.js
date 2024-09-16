@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/Meals.css';
 const Meals = () => (
   <div>
@@ -7,4 +8,3 @@ const Meals = () => (
 
 export default Meals;
 
-// Repeat similar structure for other pages like Calories, SuggestPlan, Exercises.
