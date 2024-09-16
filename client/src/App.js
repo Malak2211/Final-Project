@@ -8,8 +8,10 @@ import SuggestPlan from './pages/SuggestPlan';
 import Exercises from './pages/Exercises';     
 import Login from './Items/Login';
 import Signup from './Items/Signup';
+// import Home from './Items/home';
 import './Items/designforlogin.css';
 import './Items/designforsignup.css';
+// import './Items/designforhome.css';
 
 // Helper component to conditionally render NavBar
 const Layout = ({ children }) => {
