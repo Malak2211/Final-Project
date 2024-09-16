@@ -1,4 +1,6 @@
 import { Navbar, Nav ,Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const NavBar = () => (
   <Navbar bg="dark" variant="dark" expand="lg">
