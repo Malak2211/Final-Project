@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../Items/designforsignup.css';
+
 const Signup = () => {
   const navigate = useNavigate();
   const[name,setName] = useState()
@@ -24,7 +26,7 @@ const Signup = () => {
     navigate("/login");
   };
     return(
-        <div  className="container">
+        <div  className="signup_container">
       
         <div  className="header">
           <div  className="text">Sign Up</div>

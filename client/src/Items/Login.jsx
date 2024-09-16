@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import axios from "axios";
+import '../Items/designforlogin.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="login_container">
       <div className="header">
         <div className="text">Login</div>
         <div className="underline"></div>
