@@ -5,7 +5,7 @@ async function chatPost() {
     const url = 'https://';  
 
     const requestBody = {  
-        message: "What year was he born?"  
+        message: "What food should I eat?"  
     };  
 
     try {  
