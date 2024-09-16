@@ -1,8 +1,8 @@
 const axios = require('axios');  
 
 async function chatPost() {  
-    const apiKey = 'Your API key';  
-    const url = 'https://api.cohere.ai/chat';  
+    const apiKey = '';  
+    const url = 'https://';  
 
     const requestBody = {  
         message: "What year was he born?"  
