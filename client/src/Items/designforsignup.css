@@ -3,7 +3,9 @@
     flex-direction: column;
     margin:auto;
     margin-top: 35px;
-    background: #fff;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
     padding-bottom: 30px;
     width: 500px;
     height: 85vh;
@@ -19,7 +21,7 @@
 }
 
 .text{
-    color:#84ca01;
+    color:#ffffff;
     font-size: 47px;
     font-weight: 700;
 }
@@ -27,7 +29,7 @@
 .underline{
     width:61px;
     height:6px;
-    background: #84ca01;
+    background: #000000;
     border-radius: 9px;
 
 }
@@ -46,8 +48,9 @@
     margin: auto;
     width: 400px;
     height: 50px;
-    background-color: #EEEEEE;
-    border-radius: 6px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius:40px;
 }
 
 .input img{
@@ -91,7 +94,7 @@
 
 
 .navigatetologin{
-    color: #84ca01;
+    color: #ffffff;
     cursor:pointer;
 }
 
@@ -106,7 +109,7 @@
     width: 220px;
     height: 59px;
     color: #fff;
-    background-color: #84ca01;
+    background-color: #000000;
     border-radius: 50px;
     font-size: 18px;
     font-weight: 700;
@@ -116,7 +119,7 @@
 .remember{
     padding-left: 60px;
     margin-top: 7px;
-    color: #84ca01;
+    color: #ffffff;
     font-size: 17px;
     
 }
