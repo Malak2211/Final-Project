@@ -5,9 +5,10 @@
     margin-top: 35px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter:blur(30px);
     border-radius: 15px;
     padding-bottom: 30px;
-    width: 500px;
+    width: 480px;
     height: 85vh;
 }
 
@@ -63,7 +64,7 @@
     border: none;
     background: transparent;
     outline: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 18px;
 }
 
@@ -79,6 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #700c0c;
     gap: 10px;
     margin: -55px 27px;
 
@@ -123,6 +125,5 @@
     font-size: 17px;
     
 }
-
 
 
