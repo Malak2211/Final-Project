@@ -26,7 +26,7 @@ const Home = () => (
   className="img-fluid"
   height="200"
   width="300"
-  src="/stomic.jpg"
+  src="/stomach.jpg"
 />
         </div>
       </div>
