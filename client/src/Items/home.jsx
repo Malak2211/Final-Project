@@ -16,7 +16,7 @@ function Home(){
                     <h3>&#x2022; Adam</h3> 
                 </div>
                 <div className="buttons">
-                    <button type="submit" fomaction = '/signup'className="button">sign up</button>
+                    <button type="submit" fomAction = '/signup'className="button">sign up</button>
                 </div>
             </div>
         </div>

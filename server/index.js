@@ -1,30 +1,56 @@
 const express = require('express');  
-    const mongoose = require('mongoose');  
-    const { registerUser, loginUser, getUserDetails } = require('./controllers/userController');  
-    const verifyToken = require('./middleware/verifyToken');  
+const mongoose = require('mongoose');  
+const bodyParser = require('body-parser');  
+const cors = require('cors');  
+const bcrypt = require('bcrypt');  
+require('dotenv').config(); // Load environment variables  
 
-    const app = express();  
-    const PORT = 5000;  
+const app = express();  
+const PORT = process.env.PORT || 5000;  
 
-    mongoose.connect('mongodb://localhost:27017/mydatabase')  
-      .then(() => {  
-        console.log('Connected to MongoDB');  
-      })  
-      .catch((error) => {  
-        console.error('Error connecting to MongoDB:', error);  
-      });  
+// Middleware  
+app.use(cors());  
+app.use(bodyParser.json());  
 
-    app.use(express.json());  
+// MongoDB Connection  
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/signupdb', {  
+  useNewUrlParser: true,  
+  useUnifiedTopology: true,  
+})  
+.then(() => console.log('MongoDB connected'))  
+.catch(err => console.error('MongoDB connection error:', err));  
 
-    // Routes  
-    app.post('/api/register', registerUser);  
-    app.post('/api/login', loginUser);  
-    app.get('/api/user', verifyToken, getUserDetails);  
+// User Schema  
+const userSchema = new mongoose.Schema({  
+  name: { type: String, required: true },  
+  email: { type: String, required: true, unique: true },  
+  pwd: { type: String, required: true }  
+});  
 
-    app.get('/', (_req, res) => {  
-      res.send('Welcome to my User Registration and Login API!');  
-    });  
+const User = mongoose.model('User', userSchema);  
 
-    app.listen(PORT, () => {  
-      console.log(`Server is running on port ${PORT}`);  
-    });  
+// Signup Route  
+app.post('/api/signup', async (req, res) => {  
+  const { name, email, pwd } = req.body;  
+
+  try {  
+    const existingUser = await User.findOne({ email });  
+    if (existingUser) {  
+      return res.status(400).send('User already exists');  
+    }  
+    
+    const hashedPassword = await bcrypt.hash(pwd, 10);  
+    const newUser = new User({ name, email, pwd: hashedPassword });  
+    await newUser.save();  
+    
+    res.send('Success');  
+  } catch (error) {  
+    console.error(error);  
+    res.status(500).send('Server error');  
+  }  
+});  
+
+// Start the server  
+app.listen(PORT, () => {  
+  console.log(`Server is running on http://localhost:${PORT}`);  
+});

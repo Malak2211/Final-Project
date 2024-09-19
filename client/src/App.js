@@ -8,6 +8,8 @@ import SuggestPlan from './pages/SuggestPlan';
 import Exercises from './pages/Exercises';     
 import Login from './Items/Login';
 import Signup from './Items/Signup';
+import Recipes from './pages/Recipes'
+import './Items/Recipes.css'
 // import Home from './Items/home';
 import './Items/designforlogin.css';
 import './Items/designforsignup.css';
@@ -36,7 +38,7 @@ const App = () => {
         <Layout>
           <Routes>
             {/* Authentication routes */}
-            <Route path="/" element={<Signup />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
@@ -46,6 +48,7 @@ const App = () => {
             <Route path="/calories" element={<Calories />} />
             <Route path="/suggest-plan" element={<SuggestPlan />} />
             <Route path="/exercises" element={<Exercises />} />
+            <Route path="/recipe" element={<Recipes/>} />
           </Routes>
         </Layout>
       </Router>
