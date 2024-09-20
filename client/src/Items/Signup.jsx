@@ -15,7 +15,7 @@ const Signup = () => {
     .then(result => {
       console.log(result);
       if (result.data === "Success") {
-        navigate('/home');
+        alert('Check mail for verification')
       }
     })
     .catch(err => console.log(err));
