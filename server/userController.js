@@ -1,4 +1,4 @@
-const User = require('../models/User');  
+const User = require('./User');  
     const bcrypt = require('bcryptjs');  
     const jwt = require('jsonwebtoken');  
 
@@ -18,7 +18,7 @@ const User = require('../models/User');
         });  
 
         await newUser.save();  
-        res.status(201).json({ message: 'User registered successfully' });  
+        res.status(201).send("Success");  
       } catch (error) {  
         res.status(500).json({ error: 'Internal server error', details: error.message });  
       }  
@@ -37,8 +37,8 @@ const User = require('../models/User');
           return res.status(401).json({ error: 'Invalid credentials' });  
         }  
 
-        const token = jwt.sign({ email: user.email }, 'secret', { expiresIn: '1h' });  
-        res.status(200).json({ token });  
+        // const token = jwt.sign({ email: user.email }, 'secret', { expiresIn: '1h' });  
+        res.status(200).send("Success");  
       } catch (error) {  
         res.status(500).json({ error: 'Internal server error' });  
       }  

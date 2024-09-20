@@ -18,4 +18,4 @@ async function getCompletion() {
 }  
 
 getCompletion().catch(console.error);
-//يتم شلل
+// hi
