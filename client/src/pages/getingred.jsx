@@ -1,19 +1,19 @@
 import React from 'react';
+import '../styles/ingred.css'
 
-
-function RecipeApp() {
+function Ingred() {
 
 
   return (
     <div className='Finder_container'>
-      <h1 className='header'>Recipe Finder</h1>
+      <h1 className='header'>Add your Recipes</h1>
       <input
         type="text"
         placeholder="Enter ingredients"
         className='ingredient'
       />
-      <button className='Getrecipe'>Get Recipe</button>
+      <button className='Getrecipe'>Add</button>
     </div>
   )};
 
-export default RecipeApp;
+export default Ingred;

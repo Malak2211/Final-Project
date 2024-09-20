@@ -12,8 +12,9 @@
 .header {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #8d2121;
-    background-color: #84ca02;
+    color: #000;
+    background:o0#84ca01;
+
 }
   
 .input {

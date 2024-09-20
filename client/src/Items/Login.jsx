@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import axios from "axios";
-import '../Items/designforlogin.css';
+import '../styles/designforlogin.css';
 
 const Login = () => {
   const navigate = useNavigate();
