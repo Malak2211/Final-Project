@@ -11,11 +11,11 @@ const Signup = () => {
   const[pwd,setPwd] = useState()
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:3001/api/signup',{name,email,pwd:pwd})
+    axios.post('http://localhost:8080/api/signup',{name,email,pwd:pwd})
     .then(result => {
       console.log(result);
       if (result.data === "Success") {
-        navigate('/');
+        navigate('/home');
       }
     })
     .catch(err => console.log(err));
