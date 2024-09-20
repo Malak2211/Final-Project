@@ -8,10 +8,13 @@ import SuggestPlan from './pages/SuggestPlan';
 import Exercises from './pages/Exercises';     
 import Login from './Items/Login';
 import Signup from './Items/Signup';
-// import Home from './Items/home';
-import './Items/designforlogin.css';
-import './Items/designforsignup.css';
-// import './Items/designforhome.css';
+import Addingred from './pages/getingred'
+import Addrecipe from './pages/Addrecipe'
+import './styles/recipe.css'
+import './styles/ingred.css'
+import './styles/designforlogin.css';
+import './styles/designforsignup.css';
+
 
 // Helper component to conditionally render NavBar
 const Layout = ({ children }) => {
@@ -36,7 +39,7 @@ const App = () => {
         <Layout>
           <Routes>
             {/* Authentication routes */}
-            <Route path="/" element={<Signup />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
@@ -46,6 +49,8 @@ const App = () => {
             <Route path="/calories" element={<Calories />} />
             <Route path="/suggest-plan" element={<SuggestPlan />} />
             <Route path="/exercises" element={<Exercises />} />
+            <Route path="/ingred" element={<Addingred/>} />
+            <Route path="/recipe" element={<Addrecipe/>} />
           </Routes>
         </Layout>
       </Router>

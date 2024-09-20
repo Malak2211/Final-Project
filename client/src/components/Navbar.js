@@ -13,7 +13,7 @@ const NavBar = () => (
         <Nav.Link href="/calories">Your Calories</Nav.Link>
         <Nav.Link href="/suggest-plan">AI Plan</Nav.Link>
         <Nav.Link href="/exercises">Exercises</Nav.Link>
-        <Nav.Link href="/login">Login</Nav.Link>
+        <Nav.Link href="/signup">Signup</Nav.Link>
       </Nav>
     </Navbar.Collapse>
     </Container>
