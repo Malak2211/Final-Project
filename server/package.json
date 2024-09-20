@@ -1,6 +1,29 @@
 {
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "A brief description of my project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "example"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cohere-ai": "^7.13.2",
+    "cors": "^2.8.5",
     "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.9.0",
     "mongoose": "^8.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

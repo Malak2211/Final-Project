@@ -1,30 +1,34 @@
 const express = require('express');  
-    const mongoose = require('mongoose');  
-    const { registerUser, loginUser, getUserDetails } = require('./controllers/userController');  
-    const verifyToken = require('./middleware/verifyToken');  
+const cors = require('cors'); 
+const mongoose = require('mongoose');  
+const { registerUser, loginUser, getUserDetails } = require('./userController');  
+const verifyToken = require('./verifyToken');  
 
-    const app = express();  
-    const PORT = 5000;  
+const app = express(); 
+app.use(cors());   
+const PORT = 8080;  
 
-    mongoose.connect('mongodb://localhost:27017/mydatabase')  
-      .then(() => {  
-        console.log('Connected to MongoDB');  
-      })  
-      .catch((error) => {  
-        console.error('Error connecting to MongoDB:', error);  
-      });  
+uri = "mongodb+srv://miralalamir20:miral-123-aa@cluster0.1unu1.mongodb.net/wagabat?retryWrites=true&w=majority&appName=Cluster0"
+// uri = 'mongodb://localhost:27017/mydatabase'
+mongoose.connect(uri)  
+  .then(() => {  
+    console.log('Connected to MongoDB');  
+  })  
+  .catch((error) => {  
+    console.error('Error connecting to MongoDB:', error);  
+  });  
 
-    app.use(express.json());  
+app.use(express.json());  
 
-    // Routes  
-    app.post('/api/register', registerUser);  
-    app.post('/api/login', loginUser);  
-    app.get('/api/user', verifyToken, getUserDetails);  
+// Routes  
+app.post('/api/signup', registerUser);  
+app.post('/api/login', loginUser);  
+app.get('/api/user', getUserDetails);  
 
-    app.get('/', (_req, res) => {  
-      res.send('Welcome to my User Registration and Login API!');  
-    });  
+app.get('/', (_req, res) => {  
+  res.send('Welcome to my User Registration and Login API!');  
+});  
 
-    app.listen(PORT, () => {  
-      console.log(`Server is running on port ${PORT}`);  
-    });  
+app.listen(PORT, () => {  
+  console.log(`Server is running on port ${PORT}`);  
+});  
