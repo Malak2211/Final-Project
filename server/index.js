@@ -1,7 +1,7 @@
 const express = require('express');  
 const cors = require('cors'); 
 const mongoose = require('mongoose');  
-const { registerUser, loginUser, getUserDetails } = require('./userController');  
+const { registerUser, loginUser, getUserDetails, verifyEmail } = require('./userController');  
 const verifyToken = require('./verifyToken');  
 
 const app = express(); 
@@ -24,6 +24,7 @@ app.use(express.json());
 app.post('/api/signup', registerUser);  
 app.post('/api/login', loginUser);  
 app.get('/api/user', getUserDetails);  
+app.get('/verify-email', verifyEmail);
 
 app.get('/', (_req, res) => {  
   res.send('Welcome to my User Registration and Login API!');  

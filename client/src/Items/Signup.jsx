@@ -15,7 +15,7 @@ const Signup = () => {
     .then(result => {
       console.log(result);
       if (result.data === "Success") {
-        navigate('/home');
+        alert('Check mail for verification')
       }
     })
     .catch(err => console.log(err));
@@ -34,7 +34,7 @@ const Signup = () => {
         </div>
         <form onSubmit={handleSubmit} className="inputs">
             <div className="input">
-            <img src="./icons/persoon.jfif" alt="user_icon" className="image" />
+            <img src="./icons/image.png" alt="user_icon" className="image" />
             <input  type="text" 
                     id="username"  
                     placeholder="Name"
@@ -42,7 +42,7 @@ const Signup = () => {
                     onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className="input">
-            <img src="./icons/email.png" alt="email_icon" className="image" />
+            <img src="mail.png" alt="email_icon" className="image" />
             <input type="email" 
                     placeholder="Email" 
                     id="email" 

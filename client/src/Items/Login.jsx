@@ -34,7 +34,7 @@ const Login = () => {
 
       <form onSubmit={handleSubmit} className="inputs">
         <div className="input">
-          <img src="./icons/email.png" alt="email_icon" className="image" />
+          <img src="./icons/mail.png" alt="email_icon" className="image" />
           <input 
             type="email" 
             placeholder="Email"
@@ -69,8 +69,10 @@ const Login = () => {
             Create an Account!
           </span>
         </div>
+        
       </div>
     </div>
+    
   );
 };
 
