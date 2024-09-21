@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/calories.css';
+import '../styles/Calories.css';
 import { Container, Button } from 'react-bootstrap';
 
 const Calories = () => {

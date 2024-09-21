@@ -33,10 +33,10 @@ const registerUser = async (req, res) => {
       isVerified: false // add a verification field
     });
 
-    const token = jwt.sign({ email: req.body.email }, 'your-secret-key', { expiresIn: '1h' }); // generate verification token
+    const token = jwt.sign({ email: req.body.email }, 'lol', { expiresIn: '1h' }); // generate verification token
 
     // Send verification email
-    const verificationLink = `http://localhost:3000/verify-email?token=${token}`;
+    const verificationLink = `http://localhost:8080/verify-email?token=${token}`;
     const mailOptions = {
       from: 'luka.forsure@gmail.com',
       to: req.body.email,
@@ -85,6 +85,9 @@ const loginUser = async (req, res) => {
     if (!user) {  
       return res.status(401).json({ error: 'Invalid credentials' });  
     }  
+    if (user.isVerified === false) {  
+      return res.status(401).json({ error: 'email not verified yet' });  
+    }
 
     const pwdMatch = await bcrypt.compare(req.body.pwd, user.pwd);  
     if (!pwdMatch) {  
