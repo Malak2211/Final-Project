@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import axios from "axios";
-import '../Items/designforlogin.css';
+import '../styles/designforlogin.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', { email, "pwd": pwd })
+    axios.post('http://localhost:8080/api/login', { email, "pwd": pwd })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {

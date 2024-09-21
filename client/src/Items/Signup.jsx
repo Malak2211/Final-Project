@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../Items/designforsignup.css';
+import '../styles/designforsignup.css';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -11,11 +11,11 @@ const Signup = () => {
   const[pwd,setPwd] = useState()
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:3001/api/signup',{name,email,pwd:pwd})
+    axios.post('http://localhost:8080/api/signup',{name,email,pwd:pwd})
     .then(result => {
       console.log(result);
       if (result.data === "Success") {
-        navigate('/');
+        alert('Check mail for verification')
       }
     })
     .catch(err => console.log(err));
