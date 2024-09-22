@@ -1,6 +1,7 @@
 body {
   background-image: url('/public/icons/ppp.jfif');
   background-size: cover;
+  background-attachment:fixed;
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
