@@ -13,13 +13,26 @@ const Calories = () => {
   const [bmr, setBmr] = useState(0);
   const [tdee, setTdee] = useState(0);
 
-  const calculateBMR = (e) => {
+  const calculateBMRAndTDEE = (e) => {
     e.preventDefault();
 
-  
+ 
+    if (age < 15 || age > 80) {
+      alert('Age must be between 15 and 80.');
+      return;
+    }
+    if (height < 1 || height > 300) {
+      alert('Height must be between 1 and 300.');
+      return;
+    }
+    if (weight < 1 || weight > 180) {
+      alert('Weight must be between 1 and 180.');
+      return;
+    }
+
     const convertedHeight = heightUnit === 'in' ? height * 2.54 : height; 
     const convertedWeight = weightUnit === 'lb' ? weight * 0.453592 : weight; 
-   
+    
     let calculatedBMR;
     if (gender === 'male') {
       calculatedBMR = 88.36 + (13.4 * convertedWeight) + (4.8 * convertedHeight) - (5.7 * age);
@@ -27,16 +40,18 @@ const Calories = () => {
       calculatedBMR = 447.6 + (9.2 * convertedWeight) + (3.1 * convertedHeight) - (4.3 * age);
     }
 
-    setBmr(calculatedBMR);
+    // Adjust BMR based on activity level
     const activityMultiplier = {
-      none: 1.2,
-      light: 1.375,
-      moderate: 1.55,
-      heavy: 1.725,
+      none: 1,
+      light: 1.1,
+      moderate: 1.2,
+      heavy: 1.3,
     };
+    const adjustedBMR = calculatedBMR * activityMultiplier[exercise];
+    setBmr(adjustedBMR);
 
     // Calculate TDEE
-    const calculatedTDEE = calculatedBMR * activityMultiplier[exercise];
+    const calculatedTDEE = adjustedBMR * 1.2; // TDEE calculation based on activity level if needed
     setTdee(calculatedTDEE);
   };
 
@@ -45,7 +60,7 @@ const Calories = () => {
       <div className="row">
         <div className="col-md-6 form-section">
           <h1>BMR Calculator</h1>
-          <form onSubmit={calculateBMR}>
+          <form onSubmit={calculateBMRAndTDEE}>
             <div className="mb-3">
               <label htmlFor="gender" className="form-label">Gender</label>
               <select className="form-select" id="gender" value={gender} onChange={(e) => setGender(e.target.value)} required>
@@ -55,19 +70,34 @@ const Calories = () => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="exercise" className="form-label">I exercise</label>
-              <select className="form-select" id="exercise" value={exercise} onChange={(e) => setExercise(e.target.value)} required>
-                <option value="none">None</option>
-                <option value="light">1 to 3 times a week</option>
-                <option value="moderate">3 to 5 times a week</option>
-                <option value="heavy">6 to 7 times a week</option>
-              </select>
+              <label htmlFor="age" className="form-label">Age</label>
+              <input 
+                type="number" 
+                placeholder='age' 
+                className="form-control" 
+                id="age" 
+                value={age} 
+                onChange={(e) => setAge(e.target.value)} 
+                required 
+                min="15" 
+                max="80" 
+              />
             </div>
 
             <div className="row mb-3">
               <div className="col">
                 <label htmlFor="height" className="form-label">Height</label>
-                <input type="number" placeholder='height' className="form-control" id="height" value={height} onChange={(e) => setHeight(e.target.value)} required />
+                <input 
+                  type="number" 
+                  placeholder='height' 
+                  className="form-control" 
+                  id="height" 
+                  value={height} 
+                  onChange={(e) => setHeight(e.target.value)} 
+                  required 
+                  min="1" 
+                  max="300"
+                />
               </div>
               <div className="col">
                 <label htmlFor="height-unit" className="form-label">Unit</label>
@@ -81,7 +111,17 @@ const Calories = () => {
             <div className="row mb-3">
               <div className="col">
                 <label htmlFor="weight" className="form-label">Weight</label>
-                <input type="number" placeholder='weight' className="form-control" id="weight" value={weight} onChange={(e) => setWeight(e.target.value)} required />
+                <input 
+                  type="number" 
+                  placeholder='weight' 
+                  className="form-control" 
+                  id="weight" 
+                  value={weight} 
+                  onChange={(e) => setWeight(e.target.value)} 
+                  required 
+                  min="1" 
+                  max="180"
+                />
               </div>
               <div className="col">
                 <label htmlFor="weight-unit" className="form-label">Unit</label>
@@ -93,11 +133,16 @@ const Calories = () => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="age" className="form-label">Age</label>
-              <input type="number" placeholder='age' className="form-control" id="age" value={age} onChange={(e) => setAge(e.target.value)} required />
+              <label htmlFor="exercise" className="form-label">I exercise</label>
+              <select className="form-select" id="exercise" value={exercise} onChange={(e) => setExercise(e.target.value)} required>
+                <option value="none">None</option>
+                <option value="light">1 to 3 times a week</option>
+                <option value="moderate">3 to 5 times a week</option>
+                <option value="heavy">6 to 7 times a week</option>
+              </select>
             </div>
 
-            <Button type="submit" variant="dark">Calculate</Button>
+            <Button type="submit" variant="dark">Calculate BMR and TDEE</Button>
           </form>
         </div>
 

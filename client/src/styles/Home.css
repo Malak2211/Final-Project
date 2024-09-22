@@ -19,6 +19,36 @@ body {
   position: relative;
   color: #ffffff;
 }
+.Header__container {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5em;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 5vw;
+  width: 100%;
+}
+
+.Header__left {
+  display: flex;
+  flex-direction: row;
+  font-family: "Satisfy", cursive;
+}
+
+.Header__logo {
+  width: 4.5em;
+ 
+ margin: auto;
+}
+
+.Header__title {
+  display: flex;
+  margin-left: 0.6em;
+}
 
 .hero-section h1 {
   font-size: 4rem;
@@ -47,6 +77,7 @@ body {
 }
 
 #diet-nutrition h1 {
+  text-align: left;
   color: #343a40;
 }
 

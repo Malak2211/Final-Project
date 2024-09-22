@@ -7,7 +7,7 @@ const Home = () => (
   {/* Hero Section */}
   <div className="hero-section" style={{ backgroundImage: `url('/hero.jpg')`, height: '100vh' }}>
     <Container className="text-center text-white d-flex flex-column align-items-center justify-content-center h-100">
-      <h1 className="display-4">WELCOME TO Wagapat Gpt</h1>
+      <h1 className="Header__left">WELCOME TO Wagapat Gpt</h1>
       <Button variant="outline-light" className="mt-3" href="#diet-nutrition">Read More</Button>
     </Container>
   </div>
