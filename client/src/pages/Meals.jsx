@@ -3,7 +3,6 @@ import '../styles/Meals.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
-
 const meals = [
   {
     Name: "Spaghetti Carbonara",
@@ -140,7 +139,7 @@ const meals = [
     ],
     Recipe: "Layer fried eggplant with cooked beef or lamb in tomato sauce. Top with bechamel and cheese, then bake until golden.",
     image_url: "https://media.istockphoto.com/id/1649030858/photo/moussaka-a-traditional-greek-dish.webp?a=1&b=1&s=612x612&w=0&k=20&c=lc01ZcVXmdeSqVoAZUeQB-szw-VSP_tRpo0Z-fE6B94="
-  }
+  },
 ];
 
 const filtering = '';
@@ -160,6 +159,13 @@ function Meals(){
       })
       .catch(err => console.log(err));
   };
+  
+  const getResponse = async () => {
+    const res = await fetch("http://localhost:3001/meals"); 
+    const data = await res.json();
+    console.log(data);            
+};
+
   return(
     <div >
       <form onSubmit={handleSubmit} className="meals_inputs">
@@ -187,6 +193,7 @@ function Meals(){
           </div>
         ))}
       </div>
+      <button onClick={getResponse}>more</button>
     </div>
   )
 }

@@ -1,21 +1,21 @@
-import OpenAI from "openai";  
-import dotenv from "dotenv";  
+const express = require("express");
+const { CohereClient } = require("cohere-ai");
+const cors = require("cors");
 
-dotenv.config();  
+const cohere = new CohereClient({
+  token: "Z7ZNvsIBPGsntSEDJTpJfSNrGaDJC7B14W2HZLoe",
+});
 
-const openai = new OpenAI({  
-    apiKey: process.env.OPENAI_API_KEY,  
-});  
+const app = express();
+app.use(cors());
 
-async function getCompletion() {  
-    const completion = await openai.chat.completions.create({  
-        model: "gpt-4o",  // Check if the model name is correct  
-        messages: [  
-            {"role": "user", "content": "write a haiku about ai"}  
-        ]  
-    });  
-    console.log(completion);  
-}  
+app.get("/meals", async (req, res) => {
+    const response = await cohere.chat({
+      message: "make a json list for meals that containes(name,country,calories,Ingredients,recipe)",
+    });
+    console.log("Response from Cohere:", response);
+    res.json(response.text); 
+});
+//make a json list for meals that containes(name,country,calories,Ingredients,recipe)
 
-getCompletion().catch(console.error);
-// hi
+app.listen(3001, () => console.log("Server started on port 3001"));
