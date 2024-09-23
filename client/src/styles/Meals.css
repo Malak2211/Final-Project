@@ -1,4 +1,5 @@
 .meals_container {
+  background-color: #ccc;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

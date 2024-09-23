@@ -5,7 +5,7 @@ import React from 'react';
 const exercises = [
   {
     name: "Assisted Tricep Dips",
-    img: "E.gif", // Replace with actual GIF or image URL
+    img: "E.gif", 
   },
   {
     name: "SPOTEBI",

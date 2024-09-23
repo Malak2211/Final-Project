@@ -8,7 +8,7 @@
   
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #e3e0f8;
+  background-color: #02000c;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  color: #ffffff;
+  color: #ccc;
 }
 .Header__container {
   box-sizing: border-box;
@@ -71,7 +71,7 @@ body {
 }
 
 #diet-nutrition {
-  background-color: #ffffff;
+  background-color: #dbd8d8;
   padding: 3rem;
   border-radius: 10px;
 }
