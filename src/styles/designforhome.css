@@ -1,0 +1,43 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 35px;
+    background-color: transparent;
+    padding-bottom: 30px;
+    width: 1000px;
+    height: 85vh;
+}
+.container-points{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    text-align: left;
+    vertical-align: middle;
+    margin-top: 35px;
+    background-color: transparent;
+    padding-bottom: 30px;
+    width: 500px;
+    height: 85vh;
+}
+
+.buttons{
+    margin: 60px auto;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 59px;
+    color: #fff;
+    background-color: #908f9b;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
