@@ -1,10 +1,14 @@
 import React from 'react';
 import '../styles/exercises.css';
-
+import {useNavigate} from 'react-router-dom'
 const Exercises = () => {
+  const navigate = useNavigate();
+  const gotogif  = () => {
+    navigate("/gif");
+  };
   return (
     <div className="exercises-container">
-      <h1>Exercise Suggestions</h1>
+      <h1>Some exercies around the world!</h1>
       <h2>Simple exercise suggestions for a healthy lifestyle.</h2>
       
       <section className="exercise">
@@ -125,7 +129,8 @@ require speed, power, and strength. One study found that strength training may i
       </section>
       
       <section>
-      <button type="button">Click Me!</button>
+      <button type="button" onClick={gotogif}>click here for some exercises</button>
+
       </section>
       
     </div>
