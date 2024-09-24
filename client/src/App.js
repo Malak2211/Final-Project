@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Meals from './pages/Meals';
 import Calories from './pages/Calories';    
 import SuggestPlan from './pages/SuggestPlan'; 
-import Exercises from './pages/Exercises';     
+import Exercises from './pages/Exercises';   
+import Sleeptracker from './pages/Sleeptracker'; // Import Sleeptracker
 import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/calories" element={<Calories />} />
             <Route path="/suggest-plan" element={<SuggestPlan />} />
             <Route path="/exercises" element={<Exercises />} />
+            <Route path="/sleeptracker" element={<Sleeptracker />} />
             <Route path="/ingred" element={<Addingred/>} />
             <Route path="/recipe" element={<Addrecipe/>} />
           </Routes>

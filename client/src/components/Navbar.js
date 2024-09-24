@@ -14,6 +14,7 @@ const NavBar = () => (
           <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
           <Nav.Link as={Link} to="/suggest-plan" className="nav-link-custom">AI Plan</Nav.Link>
           <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
+          <Nav.Link as={Link} to="/sleeptracker" className="nav-link-custom">Sleep tracker</Nav.Link>
         </Nav>
         <div className="ml-auto">
           {/* Link to Login and Sign Up pages */}

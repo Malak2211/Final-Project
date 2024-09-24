@@ -42,10 +42,10 @@ const Calories = () => {
 
     // Adjust BMR based on activity level
     const activityMultiplier = {
-      none: 1,
-      light: 1.1,
-      moderate: 1.2,
-      heavy: 1.3,
+      none: 1.2,
+      light: 1.375,
+      moderate: 1.55,
+      heavy: 1.725,
     };
     const adjustedBMR = calculatedBMR * activityMultiplier[exercise];
     setBmr(adjustedBMR);

@@ -1,0 +1,72 @@
+.container1 {
+  padding: 20px;
+  border-radius: 0px;
+  background-color: #f0f8ff; /* Light background color */
+  background-size: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.title {
+  color: #000305;
+  font-weight: bold;
+  background-color: #8eb2d6;
+  max-height: 1000px;
+  text-align: center; /* Center the title */
+}
+
+.subtitle {
+  color: #003366;
+  font-weight: bold;
+  text-align: center; /* Center the subtitle */
+  margin-top: 10px; /* Space between title and subtitle */
+}
+
+.description {
+  margin-bottom: 20px;
+  text-align: center; /* Center the description */
+}
+
+.calculator-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1300px;
+  background-color: #ffffff; /* White background for calculator box */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.btn-calculate {
+  background-color: #4CAF50;
+  color: white;
+  border: none; /* Remove border */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-calculate:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.btn-clear {
+  background-color: #ccc;
+  color: black;
+  border: none; /* Remove border */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.btn-clear:hover {
+  background-color: #bbb; /* Darker grey on hover */
+}
+
+.list-unstyled {
+  padding-left: 0; /* Remove default padding for list */
+}
+
+.list-unstyled li {
+  background-color: #f8f8f8; /* Light background for list items */
+  margin: 5px 0; /* Space between items */
+  padding: 10px; /* Padding for list items */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
