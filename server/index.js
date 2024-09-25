@@ -15,7 +15,6 @@ mongoose.connect(uri)
   .then(async () => {  
     // const lol = await User.deleteOne({email: "mohamedsalama236@gmail.com"});
     console.log('Connected to MongoDB');
-    console.log(lol)
   })  
   .catch((error) => {  
     console.error('Error connecting to MongoDB:', error);  
