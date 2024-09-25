@@ -129,7 +129,7 @@ require speed, power, and strength. One study found that strength training may i
       </section>
       
       <section>
-      <button type="button" onClick={gotogif}>click here for some exercises</button>
+      <button type="button" onClick={gotogif}>click here for more home exercies</button>
 
       </section>
       
