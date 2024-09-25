@@ -94,8 +94,8 @@ const loginUser = async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });  
     }  
 
-    // const token = jwt.sign({ email: user.email }, 'secret', { expiresIn: '1h' });  
-    res.status(200).send("Success");  
+    const token = jwt.sign({ email: user.email }, 'secret', { expiresIn: '1y' });  
+    res.status(200).json({"token": token});  
   } catch (error) {  
     res.status(500).json({ error: 'Internal server error' });  
   }  
