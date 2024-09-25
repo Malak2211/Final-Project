@@ -10,6 +10,7 @@ import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
+import Gif from './pages/gif'
 import './styles/recipe.css'
 import './styles/ingred.css'
 import './styles/designforlogin.css';
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/ingred" element={<Addingred/>} />
             <Route path="/recipe" element={<Addrecipe/>} />
+            <Route path="/gif" element={<Gif/>}  />
           </Routes>
         </Layout>
       </Router>
