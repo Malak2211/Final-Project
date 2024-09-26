@@ -1,0 +1,47 @@
+/* exercises.css */
+
+.exercises-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .exercises-container h1{
+    color: #080808;
+  }
+  .exercise h1 {
+    text-align: left;
+    color: #0c8526;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin-top: 20px;
+  }
+  
+  h3 {
+    color: #34495e;
+    margin-top: 15px;
+  }
+  
+  p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .exercise {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+  }
+  
+  .exercise:last-child {
+    border-bottom: none;
+  }
+  
+ .exercise {
+    color: #000;
+    background: transparent;
+ } 
