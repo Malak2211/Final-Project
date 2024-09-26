@@ -1,7 +1,6 @@
-/* Container styling */
 .calorie-container2 {
   border:1px solid #99bff7;
-  background-color: #f0f8ff; /* Light background color */
+  background-color: #f0f8ff; 
   padding: 50px;
   border-radius: 0px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -61,7 +60,6 @@ button:hover {
   background-color: #1a252f;
 }
 
-/* Result section */
 .result-section {
   display: flex;
   flex-direction: column;
@@ -89,7 +87,6 @@ button:hover {
   font-weight: bold;
 }
 
-/* General styling */
 body {
   background-color: #ecf0f1;
   font-family: 'Poppins', sans-serif;

@@ -1,9 +1,9 @@
 .container1 {
   padding: 20px;
   border-radius: 0px;
-  background-color: #f0f8ff; /* Light background color */
+  background-color: #f0f8ff; 
   background-size: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title {
@@ -11,19 +11,19 @@
   font-weight: bold;
   background-color: #8eb2d6;
   max-height: 1000px;
-  text-align: center; /* Center the title */
+  text-align: center; 
 }
 
 .subtitle {
   color: #003366;
   font-weight: bold;
-  text-align: center; /* Center the subtitle */
-  margin-top: 10px; /* Space between title and subtitle */
+  text-align: center;
+  margin-top: 10px; 
 }
 
 .description {
   margin-bottom: 20px;
-  text-align: center; /* Center the description */
+  text-align: center; 
 }
 
 .calculator-box {
@@ -31,42 +31,42 @@
   padding: 20px;
   border-radius: 10px;
   max-width: 1300px;
-  background-color: #ffffff; /* White background for calculator box */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  background-color: #ffffff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-calculate {
   background-color: #4CAF50;
   color: white;
-  border: none; /* Remove border */
-  transition: background-color 0.3s; /* Smooth transition */
+  border: none; 
+  transition: background-color 0.3s;
 }
 
 .btn-calculate:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049; 
 }
 
 .btn-clear {
   background-color: #ccc;
   color: black;
-  border: none; /* Remove border */
-  transition: background-color 0.3s; /* Smooth transition */
+  border: none; 
+  transition: background-color 0.3s; 
 }
 
 .btn-clear:hover {
-  background-color: #bbb; /* Darker grey on hover */
+  background-color: #bbb; 
 }
 
 .list-unstyled {
-  padding-left: 0; /* Remove default padding for list */
+  padding-left: 0; 
 }
 
 .list-unstyled li {
-  background-color: #f8f8f8; /* Light background for list items */
-  margin: 5px 0; /* Space between items */
-  padding: 10px; /* Padding for list items */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f8f8f8; 
+  margin: 5px 0; 
+  padding: 10px; 
+  border-radius: 5px; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
 }
 
 

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/sleeptracker.css'; // Import the CSS file if using external CSS
+import '../styles/sleeptracker.css'; 
 
 const SleepCalculator = () => {
     const [option, setOption] = useState('wake');
     const [hours, setHours] = useState(6);
     const [minutes, setMinutes] = useState(0);
     const [amPm, setAmPm] = useState('AM');
-    const [cycleLength, setCycleLength] = useState(90); // Default cycle length in minutes
-    const [fallAsleepTime, setFallAsleepTime] = useState(15); // Default fall asleep time in minutes
+    const [cycleLength, setCycleLength] = useState(90); 
+    const [fallAsleepTime, setFallAsleepTime] = useState(15); 
     const [results, setResults] = useState([]);
 
     const calculateSleepTimes = () => {
@@ -20,12 +20,12 @@ const SleepCalculator = () => {
                 ? totalMinutes - (i + 1) * cycleLength - fallAsleepTime
                 : totalMinutes + (i + 1) * cycleLength + fallAsleepTime;
 
-            // Only add positive cycle times
+           
             if (cycleTime >= 0) {
                 let hour = Math.floor((cycleTime % 1440) / 60);
                 let min = cycleTime % 60;
                 const ampm = hour >= 12 ? 'PM' : 'AM';
-                hour = hour % 12 || 12; // Convert to 12-hour format
+                hour = hour % 12 || 12; 
                 newResults.push(`${hour}:${min < 10 ? '0' : ''}${min} ${ampm}`);
             }
         }
@@ -36,8 +36,8 @@ const SleepCalculator = () => {
         setHours(6);
         setMinutes(0);
         setAmPm('AM');
-        setCycleLength(90); // Reset to default cycle length
-        setFallAsleepTime(15); // Reset to default fall asleep time
+        setCycleLength(90); 
+        setFallAsleepTime(15); 
         setResults([]);
         setOption('wake');
     };

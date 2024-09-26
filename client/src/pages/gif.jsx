@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/gif.css'; // Import the CSS file
+import '../styles/gif.css'; 
 
 const WorkoutTracker = () => {
   return (
@@ -33,7 +33,7 @@ const WorkoutTracker = () => {
 const WorkoutTable = () => {
     const weeks = Array.from({ length: 8 }, (_, index) => `WEEK ${index + 1}`);
   
-    // Example workouts for each day (you can customize these per week/day)
+    
     const workoutPlan = [
       ["Leg Press", "Chest Press", "Rest", "Cardio", "Back Extension", "Squats", "Rest"],
       ["Deadlift", "Overhead Press", "Rest", "Pull-ups", "Lunges", "Cardio", "Rest"],

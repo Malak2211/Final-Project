@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Exercises = () => {
   const navigate = useNavigate();
   const gotogif = () => {
-    navigate('/gif'); // Replace with your target page
+    navigate('/gif'); 
   };
 
   return (
