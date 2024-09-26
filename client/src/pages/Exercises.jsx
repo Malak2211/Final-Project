@@ -1,174 +1,124 @@
-// src/components/ExerciseGrid.js
 import React from 'react';
+import '../styles/exercises.css';
+import { useNavigate } from 'react-router-dom';
 
-// Sample data for exercises
-const exercises = [
-  {
-    name: "Assisted Tricep Dips",
-    img: "E.gif", 
-  },
-  // {
-  //   name: "SPOTEBI",
-  //   img: "SPOTEBI.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Crab Kicks",
-  //   img: "Crab Kicks _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Split Squat Press",
-  //   img: "Split Squat Press _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Tricep Dips",
-  //   img: "Tricep Dips _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Step Up Crossover",
-  //   img: "Step Up Crossover _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Squat With Overhead Tricep Extension",
-  //   img: "Squat With Overhead Tricep Extension _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Squat Curl",
-  //   img: "Squat Curl _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Split Squat Press",
-  //   img: "Split Squat Press _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Side Lunge Front Raise",
-  //   img: "Side Lunge Front Raise _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Scissor Kicks",
-  //   img: "Scissor Kicks _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Band Kickback",
-  //   img: "Band Kickback _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Mountain Climber Twist",
-  //   img: "Mountain Climber Twist _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Jump Start",
-  //   img: "Jump Start _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Dumbbell Swing",
-  //   img: "Dumbbell Swing _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Dumbbell Punches ",
-  //   img: "Dumbbell Punches _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Dumbbell Lateral Raise",
-  //   img: "Dumbbell Lateral Raise _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Dumbbell Front Raise",
-  //   img: "Dumbbell Front Raise _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Dumbbell Bent Over Row",
-  //   img: "Dumbbell Bent Over Row _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Double Pulse Squat Jump",
-  //   img: "Double Pulse Squat Jump _ Exercise Illustration.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Deadlift Upright Row",
-  //   img: "Deadlift Upright Row _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Lying Tricep Extension",
-  //   img: "Lying Tricep Extension _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Asymmetrical Push Up",
-  //   img: "Asymmetrical Push Up _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Around The Worlds",
-  //   img: "Around The Worlds _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Alternating Medicine Ball Push Up",
-  //   img: "Alternating Medicine Ball Push Up _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Alternate Heel Touchers",
-  //   img: "Alternate Heel Touchers _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Lateral Band Walk",
-  //   img: "Lateral Band Walk _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Side Lunge Band Lateral Raise",
-  //   img: "Side Lunge Band Lateral Raise _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Star Toe Touch Sit Ups",
-  //   img: "Star Toe Touch Sit Ups _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Up Down Plank",
-  //   img: "Up Down Plank _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  // {
-  //   name: "Forward Jump Shuffle Back",
-  //   img: "Forward Jump Shuffle Back _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  // },
-  {
-    name: "V Ups",
-    img: "V Ups _ Illustrated Exercise Guide.gif", // Replace with actual GIF or image URL
-  },
-];
+const Exercises = () => {
+  const navigate = useNavigate();
+  const gotogif = () => {
+    navigate('/gif'); // Replace with your target page
+  };
 
-const ExerciseGrid = () => {
   return (
-    <div style={styles.gridContainer}>
-      {exercises.map((exercise, index) => (
-        <div key={index} style={styles.gridItem}>
-          <img src={exercise.img} alt={exercise.name} style={styles.image} />
-          <p style={styles.caption}>{exercise.name}</p>
-        </div>
-      ))}
+    <div className="exercises-container">
+      <h1>Some Exercises Around the World!</h1>
+      <h2>Simple Exercise Suggestions for a Healthy Lifestyle</h2>
+      
+      <section className="exercise">
+        <h2>Walking</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Walking offers many physical and mental health benefits and can be done by people
+          of all ages and fitness levels. Regular walking can help boost mood and energy levels, 
+          prevent certain diseases, burn calories, and even prolong your life. It is easy to fit 
+          into your routine, can be done anywhere, and requires nothing more than a good pair of shoes.
+          Studies indicate that walking reduces the symptoms of depression. It may also help with anxiety and loneliness.
+        </p>
+        
+        <h3>Impact on Your Body</h3>
+        <p>
+          Walking helps maintain a healthy weight and is one of the best exercises for losing weight. 
+          It’s easy on the joints and something we have to do every day.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>Jumping Rope</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Jumping rope can increase your heart rate and help decrease your risk 
+          of cardiovascular disease. It is an excellent exercise to cultivate endurance.
+        </p>
+        
+        <h3>Impact on Your Body</h3>
+        <p>
+          Jumping rope is a full-body workout that can improve your cardio health and strengthen your muscles. 
+          You may burn about 100 calories in just 10 minutes.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>Cycling</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Cycling is mainly an aerobic activity, providing a workout for your heart, blood vessels, and lungs.
+        </p>
+        
+        <h3>Impact on Your Body</h3>
+        <p>
+          It's a great way to shed extra pounds, burning a significant number of calories while cycling.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>Pilates</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Pilates promotes mobility and strength of all major muscle groups in a balanced fashion, 
+          with a focus on deep core muscles. It improves posture, flexibility, strength, and body awareness.
+        </p>
+
+        <h3>Impact on Your Body</h3>
+        <p>
+          While it doesn’t burn a significant number of calories, it can help reduce body weight and belly fat.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>Yoga</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Research shows yoga can improve physical health by lowering inflammation, aiding digestion, 
+          and increasing strength. It may also offer mental health benefits.
+        </p>
+
+        <h3>Impact on Your Body</h3>
+        <p>
+          Yoga can greatly improve body shape and help with weight loss.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>High-Intensity Interval Training (HIIT)</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          HIIT provides the same health benefits as regular exercise in less time, 
+          improving blood sugar levels and insulin sensitivity.
+        </p>
+
+        <h3>Impact on Your Body</h3>
+        <p>
+          HIIT burns more calories and fat, enhancing athletic endurance and fat-burning potential.
+        </p>
+      </section>
+
+      <section className="exercise">
+        <h2>Strength Training</h2>
+        <h3>Impact on Your Health</h3>
+        <p>
+          Strength training can boost your mood and help you perform daily tasks more easily.
+        </p>
+
+        <h3>Impact on Your Body</h3>
+        <p>
+          It improves athletic performance in sports that require speed, power, and strength.
+        </p>
+      </section>
+
+      <section>
+        <button type="button" onClick={gotogif}>Click Here for More Home Exercises</button>
+      </section>
     </div>
   );
 };
 
-// Styling for the grid layout and items
-const styles = {
-  gridContainer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)', // 3 columns layout
-    gap: '20px',
-    padding: '20px',
-    justifyItems: 'center',
-  },
-  gridItem: {
-    textAlign: 'center',
-  },
-  image: {
-    width: '150px',
-    height: '150px',
-    objectFit: 'cover',
-    
-  },
-  caption: {
-    marginTop: '10px',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-  },
-};
-
-export default ExerciseGrid;
+export default Exercises;

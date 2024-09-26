@@ -16,7 +16,6 @@ const Calories = () => {
   const calculateBMRAndTDEE = (e) => {
     e.preventDefault();
 
- 
     if (age < 15 || age > 80) {
       alert('Age must be between 15 and 80.');
       return;
@@ -40,7 +39,6 @@ const Calories = () => {
       calculatedBMR = 447.6 + (9.2 * convertedWeight) + (3.1 * convertedHeight) - (4.3 * age);
     }
 
-    // Adjust BMR based on activity level
     const activityMultiplier = {
       none: 1.2,
       light: 1.375,
@@ -50,16 +48,24 @@ const Calories = () => {
     const adjustedBMR = calculatedBMR * activityMultiplier[exercise];
     setBmr(adjustedBMR);
 
-    // Calculate TDEE
-    const calculatedTDEE = adjustedBMR * 1.2; // TDEE calculation based on activity level if needed
+    const calculatedTDEE = adjustedBMR * 1.2; 
     setTdee(calculatedTDEE);
   };
 
   return (
-    <Container className="calorie-container mt-5">
+    <Container className="calorie-container2">
       <div className="row">
         <div className="col-md-6 form-section">
-          <h1>BMR Calculator</h1>
+          <h1>BMR & TDEE Calculator</h1>
+          <div className="info-section">
+            <p>
+              <strong>BMR</strong> (Basal Metabolic Rate) represents the number of calories your body needs to maintain basic life functions like breathing and digestion at rest.
+              <br />
+              <strong>TDEE</strong> (Total Daily Energy Expenditure) is an estimate of how many calories you burn in a day, taking into account your BMR and activity level.
+              <br />
+              Use this calculator to estimate your BMR and TDEE, which can help you manage your calorie intake for weight maintenance, loss, or gain.
+            </p>
+          </div>
           <form onSubmit={calculateBMRAndTDEE}>
             <div className="mb-3">
               <label htmlFor="gender" className="form-label">Gender</label>

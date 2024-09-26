@@ -6,6 +6,7 @@ import Meals from './pages/Meals';
 import Calories from './pages/Calories';    
 import SuggestPlan from './pages/SuggestPlan'; 
 import Exercises from './pages/Exercises';   
+import Gif from './pages/gif'; // Import the component you want to navigate to
 import Sleeptracker from './pages/Sleeptracker'; // Import Sleeptracker
 import Login from './Items/Login';
 import Signup from './Items/Signup';
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/suggest-plan" element={<SuggestPlan />} />
             <Route path="/exercises" element={<Exercises />} />
             <Route path="/sleeptracker" element={<Sleeptracker />} />
+            <Route path="/gif" element={<Gif />} />
             <Route path="/ingred" element={<Addingred/>} />
             <Route path="/recipe" element={<Addrecipe/>} />
           </Routes>
