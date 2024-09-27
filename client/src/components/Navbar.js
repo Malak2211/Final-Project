@@ -6,7 +6,7 @@ import "../styles/NavBar.css"; // Import custom CSS
 const NavBar = () => (
   <Navbar className="navbar-custom" expand="lg">
     <Container>
-      <Navbar.Brand as={Link} to="/home" className="navbar-brand-custom">Wagapat Gpt</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/home" className="navbar-brand-custom">Wagbat Gpt</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">

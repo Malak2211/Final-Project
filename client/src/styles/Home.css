@@ -43,14 +43,14 @@ body {
 .hero-section h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: #0a0222;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgb(38, 6, 155);
 }
 
 .hero-section .btn {
   padding: 8px 18px;
   font-size: 1.2rem;
-  border-radius: 14px;
+  border-radius: 30px;
 }
 
 /* Diet & Nutrition Section */
@@ -141,137 +141,3 @@ section p {
   }
 }
 
-
-
-/* .hero-section {
-    background-image: url('/public/hero.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-  }
-
-
-
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: #df1414;
-}
-.Header__container {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5em;
-  color: rgb(150, 24, 24);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1em 5vw;
-  width: 100%;
-}
-
-.Header__left {
-  display: flex;
-  flex-direction: row;
-  font-family: "Satisfy", cursive;
-}
-
-.Header__logo {
-  width: 4.5em;
- 
- margin: auto;
-}
-
-.Header__title {
-  display: flex;
-  margin-left: 0.6em;
-}
-
-.hero-section h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #0a0222;
-  text-shadow: 2px 2px 4px rgb(255, 255, 255);
-}
-
-.hero-section button {
-  font-size: 1.25rem;
-  padding: 0.75rem 2rem;
-  border-color: #c41e1e;
-  color: #ac1414;
-  background-color: transparent;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.hero-section button:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-#diet-nutrition {
-  background-color: #e6e0e0;
-  padding: 3rem;
-  border-radius: 10px;
-}
-
-#diet-nutrition h1 {
-  text-align: left;
-  color: #343a40;
-}
-
-#diet-nutrition p {
-  color: #666666;
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-#diet-nutrition h2 {
-  color: #1d1e6b;
-  margin-top: 2rem;
-  font-size: 2rem;
-}
-
-
-#diet-nutrition img {
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-  transition: background-color 0.3s;
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-section button {
-    font-size: 1rem;
-    padding: 0.5rem 1.5rem;
-  }
-
-  #diet-nutrition img {
-    width: 100%;
-    height: auto;
-  }
-} */

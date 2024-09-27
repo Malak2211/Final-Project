@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/gif.css'; 
+import '../styles/gif.css';
 
 const WorkoutTracker = () => {
   return (
@@ -10,19 +10,10 @@ const WorkoutTracker = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       />
       <div className="container4">
-        <h1>WORKOUT TRACKER</h1>
+        <h1>A 7-Day Workout Routine To Help Meet Your Fitness Goals</h1>
         <p>
-          Progress can be tracked in several ways and is completely your
-          preference. It is a good idea to write down weights and repetitions to
-          track your progress - this can also help you to keep your motivation
-          up and to build a good habit.
+          A well-balanced workout schedule can help you reap the benefits of physical activity, such as boosting your mood and helping with sleep. The key to an effective workout plan is to challenge your body and engage your mind by adding various cardio, full-body, stretching, and weightlifting exercises.
         </p>
-        <p>
-          Below you can plan or track your workouts per week and you can also
-          add other forms of training, such as walking, running, or a group
-          class if you want.
-        </p>
-        <p>We hope you have fun during this journey!</p>
         <WorkoutTable />
         <WorkoutDetails />
       </div>
@@ -31,47 +22,40 @@ const WorkoutTracker = () => {
 };
 
 const WorkoutTable = () => {
-    const weeks = Array.from({ length: 1 }, (_, index) => ``);
-  
-    
-    const workoutPlan = [
-      ["Up Down Plank", "Star Toe Touch Sit Ups", "", "Cardio", "Back Extension", "Squats", ""],
-    
-    ];
-  
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>WEEK</th>
-            <th>MONDAY</th>
-            <th>TUESDAY</th>
-            <th>WEDNESDAY</th>
-            <th>THURSDAY</th>
-            <th>FRIDAY</th>
-            <th>SATURDAY</th>
-            <th>SUNDAY</th>
-          </tr>
-        </thead>
-        <tbody>
-          {weeks.map((week, weekIndex) => (
-            <tr key={week}>
-              <td>{week}</td>
-              {workoutPlan[weekIndex].map((workout, dayIndex) => (
-                <td key={dayIndex}>{workout}</td>
-              ))}
-            </tr>
+  const workoutPlan = [
+    ["Cardio", "Lower body", "Upper body and core", "Active rest and recovery", "Lower body with a focus on glutes", "Upper body", "Rest and recovery"]
+  ];
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>WEEK</th>
+          <th>MONDAY</th>
+          <th>TUESDAY</th>
+          <th>WEDNESDAY</th>
+          <th>THURSDAY</th>
+          <th>FRIDAY</th>
+          <th>SATURDAY</th>
+          <th>SUNDAY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          {workoutPlan[0].map((workout, index) => (
+            <td key={index}>{workout}</td>
           ))}
-        </tbody>
-      </table>
-    );
-  };
-  
+        </tr>
+      </tbody>
+    </table>
+  );
+};
 
 const WorkoutDetails = () => {
   return (
     <>
-      {Array.from({ length: 4 }, (_, index) => (
+      {Array.from({ length: 1 }, (_, index) => (
         <WorkoutWeek key={index + 1} weekNumber={index + 1} />
       ))}
     </>
@@ -80,137 +64,99 @@ const WorkoutDetails = () => {
 
 const WorkoutWeek = ({ weekNumber }) => {
   const focusText = [
-    "You are now about to get to know the fitness floor and the machines at the gym.",
-    "You have now passed the first week and will now strengthen the body and learn about new weights.",
-    "This week we use dumbbells, kettlebells, and barbells in the workouts.",
-    "Hopefully you find yourself more comfortable being in the free weights section now."
+    "You are now about to get to know the fitness floor.",
+   
   ];
 
   const workouts = [
     {
       warmUp: [
-        "5 minutes on treadmill or another cardio machine",
-        "Squat to stand x 6 reps",
-        "World’s greatest stretch x 6 reps/side",
-        "Glute stretch bench x 6 reps/side",
+        "Spend five to 10 minutes warming up before each workout to prevent injury. Try doing dynamic stretches—such as butt kicks and high knees—to get the blood flowing to your muscles and move your joints. End your workout with a cool down by stretching your muscles or taking a slow walk to safely bring your heart rate back to normal",
+        
       ],
       exercises: [
         {
-          day: "DAY 1",
+          day: "Monday: Cardio",
           list: [
-            "Leg press 3 sets x 12-15 reps",
-            "Chest press machine 3 sets x 12-15 reps",
-            "Seated cable row 3 sets x 12-15 reps",
-            "Leg extension 3 sets x 12-15 reps",
-            "Mountain climbers 3 sets x 20 sec",
+            "Aim for at least 30 minutes of aerobic activity, such as biking, jogging, running, and walking.",
+            "Moderate-intensity cardio: You should be able to hold a conversation during exercise.",
+            "Vigorous-intensity cardio: You can only say a few words without pausing to catch your breath.",
+            "Max heart rate: Subtract your age from 220. Target moderate intensity (50-70%) and vigorous intensity (70-85%).",
+            "Benefits: Steady-state cardio improves heart and lung stamina, and reduces the risk of diabetes, heart disease, and stroke.",
           ],
         },
         {
-          day: "DAY 2",
+          day: "Tuesday: Lower Body",
           list: [
-            "Air squats @ 3211* 3 sets x 12-15 reps",
-            "Back extensions 3 sets x 12-15 reps",
-            "Lat pulldown 3 sets x 12-15 reps",
-            "Backward lunges 3 sets x 12-15 reps",
-            "Plank 3 sets x 30 sec",
-          ],
-        },
-      ],
-    },
-    {
-      warmUp: [
-        "5 minutes on stationary bike",
-        "Hip flexor stretch x 6 reps/side",
-        "Cat-cow stretch x 8 reps",
-        "Lunges with twist x 6 reps/side",
-      ],
-      exercises: [
-        {
-          day: "DAY 1",
-          list: [
-            "Deadlift 3 sets x 10-12 reps",
-            "Overhead press 3 sets x 10-12 reps",
-            "Pull-ups 3 sets x 8-10 reps",
-            "Leg curl machine 3 sets x 10-12 reps",
-            "Jump rope 3 sets x 30 sec",
+            "Compound lifts targeting hamstrings, glutes, and quads.",
+            "Deadlifts: 3 sets x 10 reps - Works lower body, arms, and core.",
+            "Hip thrusts: 3 sets x 10 reps - Focus on glutes and hamstrings.",
+            "Lunges: 3 sets x 10 reps per leg - Strengthens legs and improves balance.",
+            "Squats: 3 sets x 10 reps - Targets quads, hamstrings, and glutes.",
+            "Tip: Use enough weight to feel muscle burn by the last couple of reps.",
           ],
         },
         {
-          day: "DAY 2",
+          day: "Wednesday: Upper Body and Core",
           list: [
-            "Front squats 3 sets x 10-12 reps",
-            "Dumbbell rows 3 sets x 10-12 reps",
-            "Lateral raises 3 sets x 10-12 reps",
-            "Reverse lunges 3 sets x 10-12 reps",
-            "Russian twists 3 sets x 20 reps",
-          ],
-        },
-      ],
-    },
-    {
-      warmUp: [
-        "5 minutes on rowing machine",
-        "Inchworms x 6 reps",
-        "Arm circles x 10 reps",
-        "Glute bridges x 10 reps",
-      ],
-      exercises: [
-        {
-          day: "DAY 1",
-          list: [
-            "Barbell squats 3 sets x 8-10 reps",
-            "Incline bench press 3 sets x 8-10 reps",
-            "Bent-over rows 3 sets x 8-10 reps",
-            "Hamstring curls 3 sets x 8-10 reps",
-            "Burpees 3 sets x 15 reps",
+            "Focus on biceps, triceps, chest, and core.",
+            "Bicep curls: 3 sets x 10 reps - Strengthens arms.",
+            "Chest press: 3 sets x 10 reps - Targets chest and shoulders.",
+            "Tricep dips: 3 sets x 10 reps - Works triceps.",
+            "Core circuit: Crunches, planks, and Russian twists for 10-15 minutes.",
+            "Tip: Focus on form to avoid injury.",
           ],
         },
         {
-          day: "DAY 2",
+          day: "Thursday: Active Rest and Recovery",
           list: [
-            "Walking lunges 3 sets x 10-12 reps",
-            "Dumbbell bench press 3 sets x 10-12 reps",
-            "T-bar row 3 sets x 10-12 reps",
-            "Cable chest fly 3 sets x 10-12 reps",
-            "Mountain climbers 3 sets x 30 sec",
-            
-          ],
-        },
-      ],
-    },
-    {
-      warmUp: [
-        "5 minutes on elliptical",
-        "Lunges with overhead reach x 6 reps/side",
-        "Shoulder dislocates x 10 reps",
-        "Leg swings x 10 reps",
-      ],
-      exercises: [
-        {
-          day: "DAY 1",
-          list: [
-            "Sumo deadlift 3 sets x 6-8 reps",
-            "Dumbbell shoulder press 3 sets x 8-10 reps",
-            "Pull-ups 3 sets x 8-10 reps",
-            "Leg extension 3 sets x 8-10 reps",
-            "High knees 3 sets x 30 sec",
+            "Take time to recover from muscle-strengthening activities.",
+            "Active recovery: Light activities like walking and stretching.",
+            "Importance: Recovery allows muscles to repair and strengthen.",
+            "Optional: Engage in light movement if you're not too sore, but avoid intense workouts.",
           ],
         },
         {
-          day: "DAY 2",
+          day: "Friday: Lower Body with Focus on Glutes",
           list: [
-            "Pistol squats 3 sets x 8-10 reps",
-            "Barbell rows 3 sets x 8-10 reps",
-            "Arnold press 3 sets x 8-10 reps",
-            "Split squats 3 sets x 8-10 reps",
-            "Plank shoulder taps 3 sets x 20 reps",
+            "Warm-up: 3 rounds of resistance band exercises (bridges, clamshells, squats).",
+            "Weighted exercises targeting glutes and hamstrings.",
+            "Deadlifts: 3 sets x 10 reps - Engage glutes and hamstrings.",
+            "Hip thrusts: 3 sets x 10 reps - Focus on glute activation.",
+            "Single-legged hip thrusts: 3 sets x 10 reps - Target glutes and improve balance.",
+          ],
+        },
+        {
+          day: "Saturday: Upper Body (Back and Shoulders)",
+          list: [
+            "Warm-up: Push-ups and pull-ups (3 sets x 10 reps each).",
+            "Weighted exercises targeting the back and shoulders.",
+            "Dumbbell single-arm row: 3 sets x 10 reps per arm - Works the upper back.",
+            "Lat pull-down: 3 sets x 10 reps - Focuses on back muscles.",
+            "Lateral raise: 3 sets x 10 reps - Strengthens shoulders.",
+            "Reverse fly: 3 sets x 10 reps - Targets rear delts and back muscles.",
+            "Shoulder press: 3 sets x 10 reps - Strengthens shoulders and upper arms.",
+          ],
+        },
+        {
+          day: "Sunday: Rest and Recovery Day",
+          list: [
+            "Take a complete rest day or engage in light recovery activities like yoga or stretching.",
+            "Benefits: Prevent muscle stiffness and soreness, promote relaxation.",
+            "Tip: Listen to your body and rest as needed to avoid overtraining.",
           ],
         },
       ],
     },
   ];
 
+  // Ensure workout exists
   const workout = workouts[weekNumber - 1];
+
+  // Check if workout is undefined
+  if (!workout) {
+    return <div>No workout available for this week.</div>;
+  }
 
   return (
     <div className="workout-section">
@@ -220,16 +166,16 @@ const WorkoutWeek = ({ weekNumber }) => {
       </p>
       <p><span>WARM UP:</span></p>
       <ul>
-        {workout.warmUp.map((item, index) => (
+        {workout.warmUp && workout.warmUp.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
-      {workout.exercises.map((workoutDay) => (
-        <div key={workoutDay.day}>
+      {workout.exercises.map((workoutDay, dayIndex) => (
+        <div key={dayIndex}>
           <p><span>{workoutDay.day}:</span></p>
           <ul>
-            {workoutDay.list.map((exercise, index) => (
-              <li key={index}>{exercise}</li>
+            {workoutDay.list.map((exercise, exerciseIndex) => (
+              <li key={exerciseIndex}>{exercise}</li>
             ))}
           </ul>
         </div>
