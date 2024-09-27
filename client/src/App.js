@@ -10,6 +10,7 @@ import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
+import FoodOfTheDay from './pages/suggesttt'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
 import Gif from './pages/gif'
 import './styles/recipe.css'
@@ -40,7 +41,7 @@ const App = () => {
         <Layout>
           <Routes>
             {/* Authentication routes */}
-            <Route path="/" element={<Meals />} />
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
@@ -83,6 +84,11 @@ const App = () => {
             <Route path="/gif" element={
               <ProtectedRoute>
                 <Gif />
+              </ProtectedRoute>
+            } />
+            <Route path="/suggest" element={
+              <ProtectedRoute>
+                <FoodOfTheDay />
               </ProtectedRoute>
             } />
           </Routes>
