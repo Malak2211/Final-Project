@@ -40,7 +40,7 @@ const App = () => {
         <Layout>
           <Routes>
             {/* Authentication routes */}
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Meals />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
