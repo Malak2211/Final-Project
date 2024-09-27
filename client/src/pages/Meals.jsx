@@ -12,50 +12,48 @@ function Meals() {
   const [choose, setChoose] = useState('');
   const [search, setSearch] = useState('');
   const [meals, setMeals] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
   // let meals = [];
   const newName = useRef("");
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('http://localhost:3001/meals', { search, choose })
-      .then(result => { 
-        console.log(result);
-        if (result.data === "Success") {
-          navigate('/login');
-        }
-      })
-      .catch(err => console.log(err));
-  };
-  // const filter = async (value) => {
-  //       newName.current = value;
-  //       console.log(newName.current);
-  //       const response = await fetch('http://localhost:3001/generate', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //         body: JSON.stringify({
-  //           message: `I need json list of meals from ${newName.current} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.` 
-  //           }),
-  //         });
-  //         const rawText = await response.text();
-  //         try {
-  //           setMeals (JSON.parse(rawText));
-  //           console.log(meals);
-  //         } catch (jsonError) {
-  //           console.error('Error parsing JSON:', jsonError);  
-  //         }
-  // };
 
-  const getResponse = async () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(inputValue); 
+    getResponse(inputValue)
+  };
+  
+  const filter = async (value) => {
+        newName.current = value;
+        console.log(newName.current);
+        const response = await fetch('http://localhost:8000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: `I need json list of meals from ${newName.current} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.` 
+            }),
+          });
+          const rawText = await response.text();
+          try {
+            setMeals (JSON.parse(rawText));
+            console.log(meals);
+          } catch (jsonError) {
+            console.error('Error parsing JSON:', jsonError);  
+          }
+  };
+
+  const getResponse = async (country) => {
     try {
-      const response = await fetch('http://localhost:3001/generate', {
+      const response = await fetch('http://localhost:8000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: "I need json list of 3 meals each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix."
+          message: `I need json list of 3 meals from ${country} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.`
         }),
       });
   
@@ -73,26 +71,27 @@ function Meals() {
       console.error('Error fetching or parsing JSON:', error);  
     }
   };
-  console.log(meals);
-  console.log(typeof(meals));
-  // const test = text();
-  // const txt = JSON.parse(test);
-  // console.log(txt);
-  // console.log(typeof(txt))
+
+  
   return (
     <div>
-      <button onClick={getResponse}>Fetch Meals</button>
-      {/* <form onSubmit={handleSubmit} className="meals_inputs">
-      <div className="meal_input" style={{alignItems:"center",justifyContent:'center'}}>
-          <h3>Filter:</h3>
-          <select className="meal-select" id="choosing" onChange={(e)  => filter(e.target.value)} required>
-            <option>All</option>
-            <option>India</option>
-            <option>Italy</option>
-            <option>Japan</option>
-          </select>
+      {/* <button onClick={getResponse}>Fetch Meals</button> */}
+
+      <form onSubmit={handleSubmit} className="meals_inputs">
+      <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
+        <input 
+          type="text" 
+          placeholder="Enter Country Name" 
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button type="submit">Submit</button>
       </div>
-      </form> */}
+    </form>
+
+
+
+
       <div className="meal_container">
         {meals.length === 0 ?(
           <p>No meals available. Click the button to fetch meals.</p>

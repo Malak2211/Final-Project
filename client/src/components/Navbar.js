@@ -14,13 +14,12 @@ const NavBar = () => {
   return (
     <Navbar className="navbar-custom" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/home" className="navbar-brand-custom">Wagapat Gpt</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/home" className="navbar-brand-custom">Wagabat Gpt</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link as={Link} to="/meals" className="nav-link-custom">Recipe Meals</Nav.Link>
             <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
-            <Nav.Link as={Link} to="/suggest-plan" className="nav-link-custom">AI Plan</Nav.Link>
             <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
           </Nav>
           <div className="ml-auto">
