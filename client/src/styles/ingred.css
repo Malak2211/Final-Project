@@ -32,7 +32,6 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 1px;
     flex-direction: column;
 }
 
@@ -42,7 +41,7 @@
     padding: 20px;
     border-radius: 8px;
     font-size: 18px;  
-    text-align: center;
+    text-align: left;
     overflow-wrap: break-word; 
 }
 

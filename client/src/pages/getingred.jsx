@@ -22,7 +22,7 @@ const Getrecipe = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: `I want the recipe of ${value} meal arrange the text and put numbers with each step beside it for example '1-' `,
+          message: `I want the recipe of ${value} meal arrange text and number each step and put it beside it for example '1-' and remove any line break character`,
         }),
       });
       
