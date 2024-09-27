@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import '../styles/Meals.css'; 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
@@ -9,70 +9,64 @@ function text() {
 }
 
 function Meals() {
-  const [choose, setChoose] = useState('');
-  const [search, setSearch] = useState('');
   const [meals, setMeals] = useState([]);
   const [inputValue, setInputValue] = useState('');
-
   // let meals = [];
   const newName = useRef("");
+  const dummyNum = useRef(0)
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(inputValue); 
     getResponse(inputValue)
   };
-  
-  const filter = async (value) => {
-        newName.current = value;
-        console.log(newName.current);
+  useEffect(() => {
+    console.log(dummyNum.current);
+    if (dummyNum.current === 0)
+    {
+      getResponse('all countries')
+    
+    }
+      dummyNum.current = 5
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.getItem(inputValue) === null) {
+      getResponse(inputValue);
+      localStorage.setItem(inputValue,meals);
+    }
+    else{
+      setMeals(localStorage.getItem(inputValue))
+    }
+  }, []);
+
+  const getResponse = async (country) => {
+      try {
         const response = await fetch('http://localhost:8000/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            message: `I need json list of meals from ${newName.current} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.` 
-            }),
-          });
-          const rawText = await response.text();
-          try {
-            setMeals (JSON.parse(rawText));
-            console.log(meals);
-          } catch (jsonError) {
-            console.error('Error parsing JSON:', jsonError);  
-          }
-  };
-
-  const getResponse = async (country) => {
-    try {
-      const response = await fetch('http://localhost:8000/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: `I need json list of 3 meals from ${country} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.`
-        }),
-      });
-  
-      const rawText = await response.text();
-      try {
-        const data = JSON.parse(rawText);
-        console.log('Parsed JSON:', data);
-        const data2 = JSON.parse(data);
-        console.log(data2)
-        setMeals(data2); 
-      } catch (jsonError) {
-        console.error('Error parsing JSON:', jsonError);  
+            message: `I need json list of meals from ${country} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix not like each other`
+          }),
+        });
+    
+        const rawText = await response.text();
+        try {
+          const data = JSON.parse(rawText);
+          console.log('Parsed JSON:', data);
+          const data2 = JSON.parse(data);
+          console.log(data2)
+          setMeals(data2); 
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);  
+        }
+      } catch (error) {
+        console.error('Error fetching or parsing JSON:', error);  
       }
-    } catch (error) {
-      console.error('Error fetching or parsing JSON:', error);  
-    }
   };
 
-  
   return (
     <div>
       {/* <button onClick={getResponse}>Fetch Meals</button> */}
@@ -109,7 +103,9 @@ function Meals() {
           ))
         )}
       </div>
+      <button  onClick={getResponse}>more</button>
     </div>
+    
   );
 }
 
