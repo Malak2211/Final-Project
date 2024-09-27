@@ -65,7 +65,8 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  border: 1px solid;
+  background-color: rgba(174, 217, 245, 0.37);
   padding: 20px;
   border-radius: 30px;
   max-width: 400px;

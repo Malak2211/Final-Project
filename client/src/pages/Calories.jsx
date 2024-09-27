@@ -29,9 +29,9 @@ const Calories = () => {
       return;
     }
 
-    const convertedHeight = heightUnit === 'in' ? height * 2.54 : height; 
-    const convertedWeight = weightUnit === 'lb' ? weight * 0.453592 : weight; 
-    
+    const convertedHeight = heightUnit === 'in' ? height * 2.54 : height;
+    const convertedWeight = weightUnit === 'lb' ? weight * 0.453592 : weight;
+
     let calculatedBMR;
     if (gender === 'male') {
       calculatedBMR = 88.36 + (13.4 * convertedWeight) + (4.8 * convertedHeight) - (5.7 * age);
@@ -48,9 +48,24 @@ const Calories = () => {
     const adjustedBMR = calculatedBMR * activityMultiplier[exercise];
     setBmr(adjustedBMR);
 
-    const calculatedTDEE = adjustedBMR * 1.2; 
+    const calculatedTDEE = adjustedBMR * 1.2; // Calculate TDEE based on adjusted BMR
     setTdee(calculatedTDEE);
+
+    handlePrintData(); // Call to print data after calculation
   };
+
+  const handlePrintData = () => {
+    console.log("Button clicked!"); // Debugging log
+    console.log(`User Data:`);
+    console.log(`- Gender: ${gender}`);
+    console.log(`- Age: ${age}`);
+    console.log(`- Height: ${height} ${heightUnit}`);
+    console.log(`- Weight: ${weight} ${weightUnit}`);
+    console.log(`- Exercise Level: ${exercise}`);
+    console.log(`- BMR: ${bmr.toFixed(2)} kcal`);
+    console.log(`- TDEE: ${tdee.toFixed(2)} kcal`);
+};
+
 
   return (
     <Container className="calorie-container2">
@@ -150,6 +165,7 @@ const Calories = () => {
 
             <Button type="submit" variant="dark">Calculate BMR and TDEE</Button>
           </form>
+          <Button variant="primary" onClick={handlePrintData}>Print Data</Button>
         </div>
 
         <div className="col-md-6 result-section">
@@ -161,6 +177,8 @@ const Calories = () => {
           <div className="result-box">
             <span id="tdee-result">{tdee.toFixed(2)}</span> kcal
           </div>
+         
+
         </div>
       </div>
     </Container>

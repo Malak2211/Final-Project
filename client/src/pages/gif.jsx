@@ -31,18 +31,12 @@ const WorkoutTracker = () => {
 };
 
 const WorkoutTable = () => {
-    const weeks = Array.from({ length: 8 }, (_, index) => `WEEK ${index + 1}`);
+    const weeks = Array.from({ length: 1 }, (_, index) => ``);
   
     
     const workoutPlan = [
-      ["Leg Press", "Chest Press", "Rest", "Cardio", "Back Extension", "Squats", "Rest"],
-      ["Deadlift", "Overhead Press", "Rest", "Pull-ups", "Lunges", "Cardio", "Rest"],
-      ["Squats", "Bench Press", "Rest", "Rows", "Deadlifts", "Burpees", "Rest"],
-      ["Barbell Rows", "Lunges", "Rest", "Dumbbell Press", "Pull-ups", "Mountain Climbers", "Rest"],
-      ["Dumbbell Press", "Cable Rows", "Rest", "Chest Fly", "Deadlift", "Cardio", "Rest"],
-      ["Bench Press", "Squats", "Rest", "Barbell Rows", "Overhead Press", "High Knees", "Rest"],
-      ["Lunges", "Pull-ups", "Rest", "Pistol Squats", "Mountain Climbers", "Plank", "Rest"],
-      ["Deadlift", "Arnold Press", "Rest", "T-Bar Rows", "Dumbbell Bench", "Cardio", "Rest"]
+      ["Up Down Plank", "Star Toe Touch Sit Ups", "", "Cardio", "Back Extension", "Squats", ""],
+    
     ];
   
     return (
