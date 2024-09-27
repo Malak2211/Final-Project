@@ -1,0 +1,59 @@
+/* NavBar.css */
+.navbar-custom {
+    background: linear-gradient(90deg, #0b091b, #455457); /* Custom gradient */
+    padding: 0.7rem;
+  }
+  
+  .navbar-brand-custom {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff !important;
+  }
+  
+  .nav-link-custom {
+    color: #fff !important;
+    margin-right: 20px;
+    font-size: 16px;
+    position: relative;
+  }
+  
+  .nav-link-custom:hover {
+    color: #fff !important;
+  }
+  
+  .nav-link-custom::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+  }
+  
+  .nav-link-custom:hover::after {
+    width: 100%;
+  }
+  
+  /* Custom styles for Login and Sign Up buttons */
+  .btn-sign-in,
+  .btn-sign-up {
+    border-radius: 20px;
+    padding: 8px 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-left: 10px;
+  }
+  
+  .btn-sign-in:hover,
+  .btn-sign-up:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-sign-up {
+    background-color: transparent;
+  }
+  
+  .btn-sign-in {
+    background-color: transparent;
+  }
+  
