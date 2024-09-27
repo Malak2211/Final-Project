@@ -12,6 +12,7 @@ import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
 import Gif from './pages/gif'
+import Ingcards from './pages/ingredcards'
 import './styles/recipe.css'
 import './styles/ingred.css'
 import './styles/designforlogin.css';
@@ -83,6 +84,11 @@ const App = () => {
             <Route path="/gif" element={
               <ProtectedRoute>
                 <Gif />
+              </ProtectedRoute>
+            } />
+            <Route path="/cards" element={
+              <ProtectedRoute>
+                <Ingcards />
               </ProtectedRoute>
             } />
           </Routes>
