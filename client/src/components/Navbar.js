@@ -1,24 +1,35 @@
-import { Navbar, Nav ,Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate from react-router-dom
+import "../styles/NavBar.css"; // Import custom CSS
 
+const NavBar = () => {
+  const navigate = useNavigate(); // Get the navigate function from React Router
 
-const NavBar = () => (
-  <Navbar bg="dark" variant="dark" expand="lg">
-    <Container>
-    <Navbar.Brand href="/">Wagapat Gpt</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        <Nav.Link href="/meals"> Recipe Meals</Nav.Link>
-        <Nav.Link href="/calories">Your Calories</Nav.Link>
-        <Nav.Link href="/suggest-plan">AI Plan</Nav.Link>
-        <Nav.Link href="/exercises">Exercises</Nav.Link>
-        <Nav.Link href="/signup">Signup</Nav.Link>
-      </Nav>
-    </Navbar.Collapse>
-    </Container>
-  </Navbar>
-);
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Remove the token from local storage
+    navigate('/login'); // Redirect the user to the login page
+  };
+
+  return (
+    <Navbar className="navbar-custom" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to="/home" className="navbar-brand-custom">Wagabat Gpt</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link as={Link} to="/meals" className="nav-link-custom">Recipe Meals</Nav.Link>
+            <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
+            <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
+          </Nav>
+          <div className="ml-auto">
+            {/* Logout button */}
+            <Button className="btn-sign-in" variant="outline-light" onClick={handleLogout}>Logout</Button>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
 export default NavBar;
-

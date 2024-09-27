@@ -3,10 +3,13 @@
     flex-direction: column;
     margin:auto;
     margin-top: 35px;
-    background: #fff;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter:blur(30px);
+    border-radius: 15px;
     padding-bottom: 30px;
     width: 500px;
-    height: 85vh;
+    height: 88vh;
 }
 
 .header{
@@ -19,7 +22,7 @@
 }
 
 .text{
-    color:#84ca01;
+    color:#000000;
     font-size: 47px;
     font-weight: 700;
 }
@@ -27,7 +30,7 @@
 .underline{
     width:61px;
     height:6px;
-    background: #84ca01;
+    background: #000000;
     border-radius: 9px;
 
 }
@@ -46,7 +49,7 @@
     margin: auto;
     width: 400px;
     height: 50px;
-    background-color: #EEEEEE;
+    background-color: #000000;
     border-radius: 6px;
 }
 
@@ -74,13 +77,13 @@
 .forget{
     padding-left: 60px;
     margin-top: 7px;
-    color: #797979;
+    color: #000000;
     font-size: 17px;
 
 }
 
 .forget span{
-    color: #84ca01;
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -88,6 +91,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #700c0c;
     gap: 10px;
     margin: -55px 27px;
 
@@ -103,7 +107,7 @@
 
 
 .navigatetosignup{
-    color: #84ca01;
+    color: #ffffff;
     cursor:pointer;
 }
 
