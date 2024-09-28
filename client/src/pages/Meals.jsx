@@ -1,88 +1,85 @@
-import React, { useState , useEffect} from 'react';
-import '../styles/Meals.css'; 
-import axios from "axios";
-import { useNavigate } from 'react-router-dom'; 
-import {useRef} from "react";
-
+import React, { useState, useEffect } from 'react';
+import '../styles/Meals.css';
+import { useRef } from 'react';
 
 function Meals() {
   const [meals, setMeals] = useState([]);
   const [inputValue, setInputValue] = useState('');
-  const dummyNum = useRef(0)  
-  let click = false;
+  const dummyNum = useRef(0);
+
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(inputValue); 
-    getResponse(inputValue)
+    e.preventDefault();
+    console.log(inputValue);
+    getResponse(inputValue);
   };
-  
+
   useEffect(() => {
-    if (dummyNum.current === 0)
-    {
-      getResponse('all countries')
-      console.log('test')
+    if (dummyNum.current === 0) {
+      getResponse('all countries');
+      console.log('test');
     }
-      dummyNum.current = 5
+    dummyNum.current = 5;
   }, []);
+
   const getResponse = async (country) => {
-    try {
-      const response = await fetch('http://localhost:8080/generate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: `I need json list of 3 meals from ${country} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.`
-        }),
-      });
-  
-      const rawText = await response.text();
+    // Check if the data for the entered country is already in local storage
+    const cachedMeals = localStorage.getItem(country);
+
+    if (cachedMeals) {
+      console.log('Using cached data for:', country);
+      setMeals(JSON.parse(cachedMeals));
+    } else {
       try {
-        const data = JSON.parse(rawText);
-        console.log('Parsed JSON:', data);
-        const data2 = JSON.parse(data);
-        console.log(data2)
-        setMeals(data2); 
-        // localStorage.setItem(country , data2)
-        localStorage.setItem(country, JSON.stringify(data2));
-        // localStorage.setItem('name' , 'miral')
-        const retrievedData = JSON.parse(localStorage.getItem(country));
-        console.log(retrievedData);
-        
-        // console.log(localStorage.getItem('name'))
-      } catch (jsonError) {
-        console.error('Error parsing JSON:', jsonError);  
+        const response = await fetch('http://localhost:8080/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: `I need json list of 3 meals from ${country} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.`,
+          }),
+        });
+
+        const rawText = await response.text();
+        try {
+          const data = JSON.parse(rawText);
+          console.log('Parsed JSON:', data);
+          const parsedData = JSON.parse(data);
+          console.log(parsedData);
+          setMeals(parsedData);
+
+          // Store the data in local storage for future use
+          localStorage.setItem(country, JSON.stringify(parsedData));
+
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+        }
+      } catch (error) {
+        console.error('Error fetching or parsing JSON:', error);
       }
-    } catch (error) {
-      console.error('Error fetching or parsing JSON:', error);  
     }
   };
 
-  
   return (
     <div>
-
       <form onSubmit={handleSubmit} className="meals_inputs">
-      <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
-        <input 
-          type="text" 
-          placeholder="Enter Country Name" 
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter")
-              setInputValue(e.target.value)
+        <div className="meal_input" style={{ alignItems: "center", justifyContent: 'center' }}>
+          <input
+            type="text"
+            placeholder="Enter Country Name"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter")
+                setInputValue(e.target.value);
             }}
-        />
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-
-
-
+          />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
 
       <div className="meal_container">
-        {meals.length === 0 ?(
+        {meals.length === 0 ? (
           <p>No meals available. Click the button to fetch meals.</p>
         ) : (
           meals.map((item, index) => (
@@ -98,7 +95,7 @@ function Meals() {
           ))
         )}
       </div>
-      <button onClick={getResponse}>More</button>
+      <button onClick={() => getResponse(inputValue)}>More</button>
     </div>
   );
 }
