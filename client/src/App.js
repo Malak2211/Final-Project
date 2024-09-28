@@ -14,7 +14,6 @@ import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
 import FoodOfTheDay from './pages/suggesttt'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
-import Gif from './pages/gif'
 import Ingcards from './pages/ingredcards'
 import './styles/recipe.css'
 import './styles/ingred.css'
@@ -92,6 +91,8 @@ const App = () => {
             <Route path="/cards" element={
               <ProtectedRoute>
                 <Ingcards />
+              </ProtectedRoute>
+            } />
             <Route path="/suggest" element={
               <ProtectedRoute>
                 <FoodOfTheDay />
