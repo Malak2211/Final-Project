@@ -1,187 +1,157 @@
-import React from 'react';
-import '../styles/gif.css';
+ import React from "react";
+ const exercises = [
+  {
+    name: "double leg stretch",
+    img: "https://i.pinimg.com/originals/d5/c3/5c/d5c35c2d1bc24c5ce7ab2b171272e0fc.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "plank bird dog",
+    img: "https://i.pinimg.com/originals/91/e1/bc/91e1bc972552801178bb0dda55422f2c.gif",
+  },
+  {
+    name: "single leg squat kick back",
+    img: "https://i.pinimg.com/originals/40/cd/50/40cd502ba0ec62b239d439f6d2aa5b35.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "diamond kicks",
+    img: "https://i.pinimg.com/originals/f2/8c/40/f28c4011844420e687b7dbbb9d081000.gif", // Replace with actual GIF or image URL
+  },
+ 
+  {
+    name: "Sumo Side Bends",
+    img: "https://i.pinimg.com/originals/10/4c/5f/104c5f7ea76d834b4a7c730de66cb580.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Butterfly Dips",
+    img: "https://i.pinimg.com/originals/7f/35/f1/7f35f144f06a115aedd3e2d2163b8d69.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Lunge Back Kick",
+    img: "https://i.pinimg.com/originals/64/16/1b/64161b1bbd8cade3dd6c5e4beddd696c.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Asymmetrical Push Up",
+    img: "https://i.pinimg.com/originals/1d/15/2b/1d152b195156aef128bc60f8fce5b5ff.gif", // Replace with actual GIF or image URL
+  },
+   {
+    name: "Speed Bag Punches",
+    img: "https://i.pinimg.com/originals/4b/93/a4/4b93a4c5a4d4f59eb2909a8fb0e97969.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Side Lunge Front Raise",
+    img: "https://i.pinimg.com/originals/48/d3/18/48d318b6fd069adf7fd5ad23bf3206f6.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Dumbbell Plank Rotation",
+    img: "https://i.pinimg.com/originals/bc/9b/7e/bc9b7e80d0e37aee17a8ff995df7ea43.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Split Squat Press",
+    img: "https://i.pinimg.com/originals/d0/54/1b/d0541bb653319a56a5d876e3eabb319a.gif", // Replace with actual GIF or image URL
+  },
+   {
+    name: "Curtsy Lunge Side Kick Raise",
+    img: "https://i.pinimg.com/originals/75/90/9d/75909d3c7bc61a35eef41f129edae1b3.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Squat Curl ",
+    img: "https://i.pinimg.com/originals/7e/d6/d7/7ed6d7c74d9befc91815a3afe73d6ec7.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Dumbbell Leg Loop",
+    img: "https://i.pinimg.com/originals/8b/d1/2c/8bd12cead1a1c9242472d1da475846bf.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Dumbbell Bent Over Row",
+    img: "https://i.pinimg.com/originals/52/2b/db/522bdbd001e5f81ddb3821260d3d6742.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Dumbbell Lateral Raise",
+    img: "https://i.pinimg.com/originals/af/f1/b7/aff1b7bf1dea681c9f494cbeb95b1234.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Single Leg Deadlift",
+    img: "https://i.pinimg.com/originals/75/88/43/758843837f5f4825ab2cdd6084725991.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Wood Chop",
+    img: "https://i.pinimg.com/originals/e2/d8/5d/e2d85d270647f75fdc0f6eac39a4a084.gif", // Replace with actual GIF or image URL
+  },
+ 
+  {
+    name: "Lawnmower Pull",
+    img: "https://i.pinimg.com/originals/df/4a/e2/df4ae262ebf58c803d8daa6cf497fa7c.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Step Up Crossover",
+    img: "https://i.pinimg.com/originals/f8/63/f4/f863f4ca6f55b54ed1fd0999f6f929f4.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Bulgarian Split Squat",
+    img: "https://i.pinimg.com/originals/e9/90/2b/e9902beff1f23a4b3e4712639fb53f7b.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Step Up With Knee Raise",
+    img: "https://i.pinimg.com/originals/52/d8/ef/52d8efd6027fd752bde4e2f4dc5fe069.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Inner Thigh Raise To Plank",
+    img: "https://i.pinimg.com/originals/07/e7/3d/07e73d96fe0e1ea7f5b722e64105291f.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Superman Twist",
+    img: "https://i.pinimg.com/originals/e7/67/01/e767015e4c2c6e9e3dfb7fa68621da0d.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Side Plank Hip Lifts",
+    img: "https://i.pinimg.com/originals/af/7f/56/af7f569f481e3458cebb80ab625dfbd2.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Seated Knee Tucks",
+    img: "https://i.pinimg.com/originals/4a/50/b4/4a50b49f6fa049df74e759c29c150fbe.gif", // Replace with actual GIF or image URL
+  },
+  {
+    name: "Reverse Crunch Twist",
+    img: "https://i.pinimg.com/originals/f8/20/d3/f820d33087467aec5a8df8771e7772cf.gif", // Replace with actual GIF or image URL
+  },
+];
 
-const WorkoutTracker = () => {
+const ExerciseGrid = () => {
   return (
-    <div>
-      <title>Workout Tracker</title>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      />
-      <div className="container4">
-        <h1>A 7-Day Workout Routine To Help Meet Your Fitness Goals</h1>
-        <p>
-          A well-balanced workout schedule can help you reap the benefits of physical activity, such as boosting your mood and helping with sleep. The key to an effective workout plan is to challenge your body and engage your mind by adding various cardio, full-body, stretching, and weightlifting exercises.
-        </p>
-        <WorkoutTable />
-        <WorkoutDetails />
-      </div>
-    </div>
-  );
-};
-
-const WorkoutTable = () => {
-  const workoutPlan = [
-    ["Cardio", "Lower body", "Upper body and core", "Active rest and recovery", "Lower body with a focus on glutes", "Upper body", "Rest and recovery"]
-  ];
-
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>WEEK</th>
-          <th>MONDAY</th>
-          <th>TUESDAY</th>
-          <th>WEDNESDAY</th>
-          <th>THURSDAY</th>
-          <th>FRIDAY</th>
-          <th>SATURDAY</th>
-          <th>SUNDAY</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          {workoutPlan[0].map((workout, index) => (
-            <td key={index}>{workout}</td>
-          ))}
-        </tr>
-      </tbody>
-    </table>
-  );
-};
-
-const WorkoutDetails = () => {
-  return (
-    <>
-      {Array.from({ length: 1 }, (_, index) => (
-        <WorkoutWeek key={index + 1} weekNumber={index + 1} />
-      ))}
-    </>
-  );
-};
-
-const WorkoutWeek = ({ weekNumber }) => {
-  const focusText = [
-    "You are now about to get to know the fitness floor.",
-   
-  ];
-
-  const workouts = [
-    {
-      warmUp: [
-        "Spend five to 10 minutes warming up before each workout to prevent injury. Try doing dynamic stretches—such as butt kicks and high knees—to get the blood flowing to your muscles and move your joints. End your workout with a cool down by stretching your muscles or taking a slow walk to safely bring your heart rate back to normal",
-        
-      ],
-      exercises: [
-        {
-          day: "Monday: Cardio",
-          list: [
-            "Aim for at least 30 minutes of aerobic activity, such as biking, jogging, running, and walking.",
-            "Moderate-intensity cardio: You should be able to hold a conversation during exercise.",
-            "Vigorous-intensity cardio: You can only say a few words without pausing to catch your breath.",
-            "Max heart rate: Subtract your age from 220. Target moderate intensity (50-70%) and vigorous intensity (70-85%).",
-            "Benefits: Steady-state cardio improves heart and lung stamina, and reduces the risk of diabetes, heart disease, and stroke.",
-          ],
-        },
-        {
-          day: "Tuesday: Lower Body",
-          list: [
-            "Compound lifts targeting hamstrings, glutes, and quads.",
-            "Deadlifts: 3 sets x 10 reps - Works lower body, arms, and core.",
-            "Hip thrusts: 3 sets x 10 reps - Focus on glutes and hamstrings.",
-            "Lunges: 3 sets x 10 reps per leg - Strengthens legs and improves balance.",
-            "Squats: 3 sets x 10 reps - Targets quads, hamstrings, and glutes.",
-            "Tip: Use enough weight to feel muscle burn by the last couple of reps.",
-          ],
-        },
-        {
-          day: "Wednesday: Upper Body and Core",
-          list: [
-            "Focus on biceps, triceps, chest, and core.",
-            "Bicep curls: 3 sets x 10 reps - Strengthens arms.",
-            "Chest press: 3 sets x 10 reps - Targets chest and shoulders.",
-            "Tricep dips: 3 sets x 10 reps - Works triceps.",
-            "Core circuit: Crunches, planks, and Russian twists for 10-15 minutes.",
-            "Tip: Focus on form to avoid injury.",
-          ],
-        },
-        {
-          day: "Thursday: Active Rest and Recovery",
-          list: [
-            "Take time to recover from muscle-strengthening activities.",
-            "Active recovery: Light activities like walking and stretching.",
-            "Importance: Recovery allows muscles to repair and strengthen.",
-            "Optional: Engage in light movement if you're not too sore, but avoid intense workouts.",
-          ],
-        },
-        {
-          day: "Friday: Lower Body with Focus on Glutes",
-          list: [
-            "Warm-up: 3 rounds of resistance band exercises (bridges, clamshells, squats).",
-            "Weighted exercises targeting glutes and hamstrings.",
-            "Deadlifts: 3 sets x 10 reps - Engage glutes and hamstrings.",
-            "Hip thrusts: 3 sets x 10 reps - Focus on glute activation.",
-            "Single-legged hip thrusts: 3 sets x 10 reps - Target glutes and improve balance.",
-          ],
-        },
-        {
-          day: "Saturday: Upper Body (Back and Shoulders)",
-          list: [
-            "Warm-up: Push-ups and pull-ups (3 sets x 10 reps each).",
-            "Weighted exercises targeting the back and shoulders.",
-            "Dumbbell single-arm row: 3 sets x 10 reps per arm - Works the upper back.",
-            "Lat pull-down: 3 sets x 10 reps - Focuses on back muscles.",
-            "Lateral raise: 3 sets x 10 reps - Strengthens shoulders.",
-            "Reverse fly: 3 sets x 10 reps - Targets rear delts and back muscles.",
-            "Shoulder press: 3 sets x 10 reps - Strengthens shoulders and upper arms.",
-          ],
-        },
-        {
-          day: "Sunday: Rest and Recovery Day",
-          list: [
-            "Take a complete rest day or engage in light recovery activities like yoga or stretching.",
-            "Benefits: Prevent muscle stiffness and soreness, promote relaxation.",
-            "Tip: Listen to your body and rest as needed to avoid overtraining.",
-          ],
-        },
-      ],
-    },
-  ];
-
-  // Ensure workout exists
-  const workout = workouts[weekNumber - 1];
-
-  // Check if workout is undefined
-  if (!workout) {
-    return <div>No workout available for this week.</div>;
-  }
-
-  return (
-    <div className="workout-section">
-      <h2>WEEK {weekNumber} | WORKOUTS</h2>
-      <p>
-        <span>FOCUS THIS WEEK:</span> {focusText[weekNumber - 1]}
-      </p>
-      <p><span>WARM UP:</span></p>
-      <ul>
-        {workout.warmUp && workout.warmUp.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      {workout.exercises.map((workoutDay, dayIndex) => (
-        <div key={dayIndex}>
-          <p><span>{workoutDay.day}:</span></p>
-          <ul>
-            {workoutDay.list.map((exercise, exerciseIndex) => (
-              <li key={exerciseIndex}>{exercise}</li>
-            ))}
-          </ul>
+    <div style={styles.gridContainer}>
+      {exercises.map((exercise, index) => (
+        <div key={index} style={styles.gridItem}>
+          <img src={exercise.img} alt={exercise.name} style={styles.image} />
+          <p style={styles.caption}>{exercise.name}</p>
         </div>
       ))}
     </div>
   );
 };
 
-export default WorkoutTracker;
+// Styling for the grid layout and items
+const styles = {
+  gridContainer: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)', // 3 columns layout
+    gap: '20px',
+    padding: '20px',
+    justifyItems: 'center',
+  },
+  gridItem: {
+    textAlign: 'center',
+  },
+  image: {
+    width: '150px',
+    height: '150px',
+    objectFit: 'cover',
+    
+  },
+  caption: {
+    marginTop: '10px',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+  },
+};
+
+export default ExerciseGrid;

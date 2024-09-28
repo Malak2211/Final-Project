@@ -23,7 +23,7 @@ const Calories = () => {
 
   const getResponse = async () => {
     try {
-      const response = await fetch('http://localhost:3001/generate', {
+      const response = await fetch('http://localhost:8000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -219,9 +219,9 @@ const Calories = () => {
           <Button variant="dark" onClick={getResponse}>Generate workout plan</Button>
 
           {test && (
-          <div className="recipe_output">
+          <div>
             <h2>Workout Plan</h2>
-            <div className="recipe_card">
+            <div>
               {test.map((step, index) => (
                 <p key={index}>{step.trim()}.</p>
               ))}

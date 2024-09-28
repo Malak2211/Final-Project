@@ -14,7 +14,8 @@ const Login = () => {
     axios.post('http://localhost:8080/api/login', { email, "pwd": pwd })
       .then(result => {
         console.log(result);
-        if (result.data === "Success") {
+        if (result.status === 200) {
+          localStorage.setItem('token', result.data.token);
           navigate('/home');
         }
       })
