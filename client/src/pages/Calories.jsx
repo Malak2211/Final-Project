@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import '../styles/Calories.css';
 import { Container, Button } from 'react-bootstrap';
 
+function humanize(recipe){
+  let newString = recipe.replace(/\\n/g, '\n');
+  newString = newString.replace(/"/g, ' ');
+  return newString
+}
+
+
 const Calories = () => {
   const [gender, setGender] = useState('male');
   const [height, setHeight] = useState('');
@@ -22,7 +29,7 @@ const Calories = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: `Generate a workout plan for a person who is ${age} years old, identifies as ${gender}, weighs ${weight} kilograms, and is ${height} centimeters tall. Their preferred exercise is ${exercise}.Please include warm-up, main exercises, and a cool-down session.`
+          message: `Generate a workout plan for a person who is ${age} years old, identifies as ${gender}, weighs ${weight} kilograms, and is ${height} centimeters tall. Their preferred exercise is ${exercise}.Please include warm-up, main exercises, and a cool-down session.  but use plain text formatting without any Markdown symbols like ## or **.`,
           
         }),
       });
@@ -31,7 +38,8 @@ const Calories = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
   
-      const rawText = await response.text();
+      let rawText = await response.text();
+      rawText = humanize(rawText);
       setTest(rawText);
     } catch (error) {
       console.error('Error fetching or parsing JSON:', error);
