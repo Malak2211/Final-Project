@@ -1,50 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import '../styles/Meals.css'; 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
 import {useRef} from "react";
 
-function text() {
-  return '[{"name": "John","age": 30,"city": "New York"},{"name": "Jane","age": 25,"city": "San Francisco"},{"name": "Mike","age": 35,"city": "Chicago"}]'
-}
 
 function Meals() {
-  const [choose, setChoose] = useState('');
-  const [search, setSearch] = useState('');
   const [meals, setMeals] = useState([]);
   const [inputValue, setInputValue] = useState('');
-
-  // let meals = [];
-  const newName = useRef("");
-  const navigate = useNavigate();
-
+  const dummyNum = useRef(0)  
+  let click = false;
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(inputValue); 
     getResponse(inputValue)
   };
   
-  const filter = async (value) => {
-        newName.current = value;
-        console.log(newName.current);
-        const response = await fetch('http://localhost:8080/generate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            message: `I need json list of meals from ${newName.current} each have(name,country,calories,ingredients,recipe) without 'Here's a JSON list' prefix.` 
-            }),
-          });
-          const rawText = await response.text();
-          try {
-            setMeals (JSON.parse(rawText));
-            console.log(meals);
-          } catch (jsonError) {
-            console.error('Error parsing JSON:', jsonError);  
-          }
-  };
-
+  useEffect(() => {
+    if (dummyNum.current === 0)
+    {
+      getResponse('all countries')
+      console.log('test')
+    }
+      dummyNum.current = 5
+  }, []);
   const getResponse = async (country) => {
     try {
       const response = await fetch('http://localhost:8080/generate', {
@@ -64,6 +43,13 @@ function Meals() {
         const data2 = JSON.parse(data);
         console.log(data2)
         setMeals(data2); 
+        // localStorage.setItem(country , data2)
+        localStorage.setItem(country, JSON.stringify(data2));
+        // localStorage.setItem('name' , 'miral')
+        const retrievedData = JSON.parse(localStorage.getItem(country));
+        console.log(retrievedData);
+        
+        // console.log(localStorage.getItem('name'))
       } catch (jsonError) {
         console.error('Error parsing JSON:', jsonError);  
       }
@@ -75,7 +61,6 @@ function Meals() {
   
   return (
     <div>
-      {/* <button onClick={getResponse}>Fetch Meals</button> */}
 
       <form onSubmit={handleSubmit} className="meals_inputs">
       <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
@@ -84,6 +69,10 @@ function Meals() {
           placeholder="Enter Country Name" 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter")
+              setInputValue(e.target.value)
+            }}
         />
         <button type="submit">Submit</button>
       </div>
@@ -109,6 +98,7 @@ function Meals() {
           ))
         )}
       </div>
+      <button onClick={getResponse}>More</button>
     </div>
   );
 }
