@@ -13,19 +13,21 @@
 }
   
 .searchbar {
-    padding: 10px;
     width: 403px;  
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 48px;
 }
   
 .search_btn {
-    padding: 10px 20px;
     margin-left: 10px;
-    background-color: #face08;  
+    background-color: #D88A4A;  
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 162.6px;
+    height: 50px;
+    color: black;
 }
   
 .output_container {
@@ -36,7 +38,7 @@
 }
 
 .recipe_card {
-    max-width: 800px;
+    max-width: 900px;
     background-color: #f0f0f0; 
     padding: 20px;
     border-radius: 8px;
@@ -53,5 +55,8 @@
 
 .output_container h2{
     font-size: 40px;
-    background-color: #99BCAD
+    background-color: #D88A4A;
+    color:black;
 }
+
+
