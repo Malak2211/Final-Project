@@ -53,7 +53,7 @@ message: `Provide a detailed description of the dish ${value} with ingredients a
         <form className="bar" onSubmit={handleSubmit}>
           <input
             className="searchbar"
-            placeholder="Enter Ingredients"
+            placeholder="Enter a meal name"
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)} 
           />
