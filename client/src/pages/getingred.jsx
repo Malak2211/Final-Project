@@ -22,7 +22,7 @@ const Getrecipe = () => {
 
   const getResponse = async (value) => {
     try {
-      const response = await fetch('http://localhost:3001/generate', {
+      const response = await fetch('http://localhost:8000/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

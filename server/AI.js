@@ -22,4 +22,4 @@ app.post("/generate", async (req, res) => {
     }
 );
 
-app.listen(3001, () => console.log("Server started on port 3001"));
+app.listen(8000, () => console.log("Server started on port 8000"));
