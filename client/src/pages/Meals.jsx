@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../pages/Meals.css'; 
-import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
 import {useRef} from "react";
 
@@ -9,10 +8,9 @@ function text() {
 }
 
 function Meals() {
-  const [choose, setChoose] = useState('');
-  const [search, setSearch] = useState('');
   const [meals, setMeals] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const dummyNum = useRef(0);
 
   // let meals = [];
   const newName = useRef("");
@@ -23,6 +21,14 @@ function Meals() {
     console.log(inputValue); 
     getResponse(inputValue)
   };
+
+  useEffect(() => {
+    if (dummyNum.current === 0) {
+      getResponse('all countries');
+      console.log('test');
+    }
+    dummyNum.current = 5;
+  }, []);
   
   const filter = async (value) => {
         newName.current = value;
@@ -44,8 +50,28 @@ function Meals() {
             console.error('Error parsing JSON:', jsonError);  
           }
   };
+  
+  function setText(rawText) {
+    try {
+      const data = JSON.parse(rawText);
+      console.log('Parsed JSON:', data);
+      const data2 = JSON.parse(data);
+      console.log(data2)
+      setMeals(data2); 
+      return data2;
+    } catch (jsonError) {
+      console.error('Error parsing JSON:', jsonError);  
+    }
+  }
 
   const getResponse = async (country) => {
+    const cachedMeals = localStorage.getItem(country);
+    if (cachedMeals) {
+      let text_input = JSON.parse(cachedMeals);
+      setMeals(text_input); 
+      return;
+    }
+
     try {
       const response = await fetch('http://localhost:8080/generate', {
         method: 'POST',
@@ -58,15 +84,9 @@ function Meals() {
       });
   
       const rawText = await response.text();
-      try {
-        const data = JSON.parse(rawText);
-        console.log('Parsed JSON:', data);
-        const data2 = JSON.parse(data);
-        console.log(data2)
-        setMeals(data2); 
-      } catch (jsonError) {
-        console.error('Error parsing JSON:', jsonError);  
-      }
+      let parsedData = setText(rawText);
+      localStorage.setItem(country, JSON.stringify(parsedData));
+      
     } catch (error) {
       console.error('Error fetching or parsing JSON:', error);  
     }
@@ -85,6 +105,10 @@ function Meals() {
           placeholder="Enter Country Name" 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter")
+              setInputValue(e.target.value);
+          }}
         />
         
       </div>
