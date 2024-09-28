@@ -14,7 +14,8 @@ import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
 import FoodOfTheDay from './pages/suggesttt'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
-import gif from './pages/gif'
+import Gif from './pages/gif'
+import Ingcards from './pages/ingredcards'
 import './styles/recipe.css'
 import './styles/ingred.css'
 import './styles/designforlogin.css';
@@ -43,7 +44,7 @@ const App = () => {
         <Layout>
           <Routes>
             {/* Authentication routes */}
-            <Route path="/" element={<Calories />} />
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             
@@ -88,6 +89,9 @@ const App = () => {
                 <Gif />
               </ProtectedRoute>
             } />
+            <Route path="/cards" element={
+              <ProtectedRoute>
+                <Ingcards />
             <Route path="/suggest" element={
               <ProtectedRoute>
                 <FoodOfTheDay />
