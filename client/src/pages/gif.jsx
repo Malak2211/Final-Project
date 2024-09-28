@@ -151,6 +151,8 @@ const styles = {
     marginTop: '10px',
     fontSize: '1rem',
     fontWeight: 'bold',
+    color: 'white',
+    background: '#5A5A5A'
   },
 };
 
