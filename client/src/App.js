@@ -5,15 +5,14 @@ import Home from './pages/Home';
 import Meals from './pages/Meals';
 import Calories from './pages/Calories';    
 import SuggestPlan from './pages/SuggestPlan'; 
-import Exercises from './pages/Exercises';     
+import Exercises from './pages/Exercises';
+import SleepCycleTracker from './pages/SleepCycleTracker';
 import Login from './Items/Login';
 import Signup from './Items/Signup';
-import Addingred from './pages/getingred'
-import Addrecipe from './pages/Addrecipe'
-import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
-import Gif from './pages/gif'
-import './styles/recipe.css'
-import './styles/ingred.css'
+import Addingred from './pages/getingred';
+import Addrecipe from './pages/Addrecipe';
+import './styles/recipe.css';
+import './styles/ingred.css';
 import './styles/designforlogin.css';
 import './styles/designforsignup.css';
 
@@ -33,62 +32,29 @@ const Layout = ({ children }) => {
   );
 };
 
+// App component definition
 const App = () => {
   return (
-    <div className="App">
-      <Router>
-        <Layout>
-          <Routes>
-            {/* Authentication routes */}
-            <Route path="/" element={<Meals />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            
-            {/* Main application routes (protected) */}
-            <Route path="/home" element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            } /> 
-            <Route path="/meals" element={
-              <ProtectedRoute>
-                <Meals />
-              </ProtectedRoute>
-            } />
-            <Route path="/calories" element={
-              <ProtectedRoute>
-                <Calories />
-              </ProtectedRoute>
-            } />
-            <Route path="/suggest-plan" element={
-              <ProtectedRoute>
-                <SuggestPlan />
-              </ProtectedRoute>
-            } />
-            <Route path="/exercises" element={
-              <ProtectedRoute>
-                <Exercises />
-              </ProtectedRoute>
-            } />
-            <Route path="/ingred" element={
-              <ProtectedRoute>
-                <Addingred />
-              </ProtectedRoute>
-            } />
-            <Route path="/recipe" element={
-              <ProtectedRoute>
-                <Addrecipe />
-              </ProtectedRoute>
-            } />
-            <Route path="/gif" element={
-              <ProtectedRoute>
-                <Gif />
-              </ProtectedRoute>
-            } />
-          </Routes>
-        </Layout>
-      </Router>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          {/* Authentication routes */}
+          <Route path="/" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          
+          {/* Main application routes */}
+          <Route path="/home" element={<Home />} /> 
+          <Route path="/tracker" element={<SleepCycleTracker />} />
+          <Route path="/meals" element={<Meals />} />
+          <Route path="/calories" element={<Calories />} />
+          <Route path="/suggest-plan" element={<SuggestPlan />} />
+          <Route path="/exercises" element={<Exercises />} />
+          <Route path="/ingred" element={<Addingred />} />
+          <Route path="/recipe" element={<Addrecipe />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
