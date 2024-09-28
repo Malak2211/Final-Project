@@ -10,6 +10,7 @@ import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
+import FoodOfTheDay from './pages/suggesttt'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
 import Gif from './pages/gif'
 import Ingcards from './pages/ingredcards'
@@ -89,6 +90,9 @@ const App = () => {
             <Route path="/cards" element={
               <ProtectedRoute>
                 <Ingcards />
+            <Route path="/suggest" element={
+              <ProtectedRoute>
+                <FoodOfTheDay />
               </ProtectedRoute>
             } />
           </Routes>
