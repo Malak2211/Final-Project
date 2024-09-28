@@ -1,91 +1,114 @@
-.login_container{
+.login_container {
     display:flex;
     flex-direction: column;
     margin:auto;
     margin-top: 35px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter:blur(30px);
-    border-radius: 15px;
+ border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter:blur(3px);
+    border-radius: 20px;   
     padding-bottom: 30px;
-    width: 500px;
-    height: 88vh;
-}
-
-.header{
+    width: 440px;
+    height: 85vh;
+  }
+  
+  .header {
     display:flex;
     flex-direction: column;
     align-items: center;
     gap:9px;
     width:100%;
     margin-top: 30px;  
-}
-
-.text{
+  }
+  
+  .text {
     color:#000000;
     font-size: 47px;
     font-weight: 700;
-}
-
-.underline{
+  }
+  
+  .underline {
     width:61px;
     height:6px;
     background: #000000;
     border-radius: 9px;
-
-}
-
-.inputs{
+  }
+  
+  .inputs {
     margin-top: 55px;
     display:flex;
     flex-direction: column;
     gap:9px;
-    
-}
-
-.input{
+  }
+  
+  .input{
     display: flex;
     align-items: center;
     margin: auto;
     width: 400px;
     height: 50px;
     background-color: #000000;
+    background: transparent;
     border-radius: 6px;
 }
-
-.input img{
-    margin: 0px 30px;
-}
-
-.input input{
+  .input input{
     width: 400px;
     height: 50;
     border: none;
     background: transparent;
     outline: none;
-    color: #000000;
+    color: #ffffff;
     font-size: 18px;
 }
-
-.image{
+  .input {
+    position: relative;
+  }
+  
+  .image{
     width: 20px; 
     height: 20px ;
     margin:0px 15px; 
     margin-right:10px;
 }
-
+  
+  
 .forget{
-    padding-left: 60px;
-    margin-top: 7px;
+    padding-bottom: 15%;
+    padding-left: 45px;
+    margin: -27px 5px;
+   
     color: #000000;
     font-size: 17px;
 
 }
-
-.forget span{
-    color: #ffffff;
+  
+  .forget span {
+    color: #ff0015;
     cursor: pointer;
-}
+    font-size: 14px;
+  
+  }
+  
+  .forget span:hover {
+    text-decoration: underline;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+
+
+  .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
 
 .msg{
     display: flex;
@@ -93,44 +116,22 @@
     align-items: center;
     color: #700c0c;
     gap: 10px;
-    margin: -55px 27px;
+    margin: -5px 27px;
 
 }
-
-.submit{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-
-.navigatetosignup{
-    color: #ffffff;
-    cursor:pointer;
-}
-
-.buttons{
-    margin: 60px auto;
-}
-
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 59px;
-    color: #fff;
-    /* color: #84ca01; */
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 700;
+  
+  .Sign\ Up {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .navigatetosignup {
+    color: #000000;
+    margin-left: 5px;
     cursor: pointer;
-    border: none;
-}
-
-
-
-
-
+  }
+  
+  .navigatetosignup:hover {
+    text-decoration: underline;
+  }
+  

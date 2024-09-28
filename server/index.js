@@ -2,8 +2,7 @@ const express = require('express');
 const cors = require('cors'); 
 const mongoose = require('mongoose');  
 const { registerUser, loginUser, getUserDetails, verifyEmail } = require('./userController');  
-const verifyToken = require('./verifyToken');  
-const User = require('./User');  
+const generate_ai_res = require('./AI');  
 
 const app = express(); 
 app.use(cors());   
@@ -13,7 +12,6 @@ uri = "mongodb+srv://miralalamir20:miral-123-aa@cluster0.1unu1.mongodb.net/wagab
 // uri = 'mongodb://localhost:27017/mydatabase'
 mongoose.connect(uri)  
   .then(async () => {  
-    // const lol = await User.deleteOne({email: "mohamedsalama236@gmail.com"});
     console.log('Connected to MongoDB');
   })  
   .catch((error) => {  
@@ -27,6 +25,7 @@ app.post('/api/signup', registerUser);
 app.post('/api/login', loginUser);  
 app.get('/api/user', getUserDetails);  
 app.get('/verify-email', verifyEmail);
+app.post('/generate', generate_ai_res);
 
 app.get('/', (_req, res) => {  
   res.send('Welcome to my User Registration and Login API!');  
