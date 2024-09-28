@@ -14,6 +14,12 @@ const Getrecipe = () => {
     await getResponse(newName.current); 
   };
 
+  function humanize(recipe){
+    let newString = recipe.replace(/\\n/g, '\n');
+    newString = newString.replace(/"/g, ' ');
+    return newString
+  }
+
   const getResponse = async (value) => {
     try {
       const response = await fetch('http://localhost:3001/generate', {
@@ -22,7 +28,7 @@ const Getrecipe = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-message: `I want the recipe for a ${value} meal with steps numbered like '1-', and add the description of ${value} and arrange text.Delete '\n'`
+message: `Provide a detailed description of the dish ${value} with ingredients and instructions, but use plain text formatting without any Markdown symbols like ## or **`
 
         }),
       });
@@ -31,7 +37,8 @@ message: `I want the recipe for a ${value} meal with steps numbered like '1-', a
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const rawText = await response.text();
+      let rawText = await response.text();
+      rawText = humanize(rawText)
       const recipeSteps = rawText.split('.').filter(step => step.trim() !== ''); 
       setRecipeData(recipeSteps);
       console.log(`Recipe: ${rawText}`);
