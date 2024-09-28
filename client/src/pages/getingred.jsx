@@ -22,7 +22,8 @@ const Getrecipe = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: `I want the recipe of ${value} meal arrange text and number each step and put it beside it for example '1-' and remove any line break character`,
+message: `I want the recipe for a ${value} meal with steps numbered like '1-', and add the description of ${value} and arrange text.Delete '\n'`
+
         }),
       });
       
@@ -32,7 +33,6 @@ const Getrecipe = () => {
       
       const rawText = await response.text();
       const recipeSteps = rawText.split('.').filter(step => step.trim() !== ''); 
-      
       setRecipeData(recipeSteps);
       console.log(`Recipe: ${rawText}`);
     } catch (error) {
@@ -58,7 +58,7 @@ const Getrecipe = () => {
         {error && <p className="error_message">{error}</p>}
         {recipeData && (
           <div className="recipe_output">
-            <h2>Recipe:</h2>
+            <h2>Recipe</h2>
             <div className="recipe_card">
               {recipeData.map((step, index) => (
                 <p key={index}>{step.trim()}.</p>

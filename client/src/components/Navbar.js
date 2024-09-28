@@ -22,6 +22,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
             <Nav.Link as={Link} to="/suggest-plan" className="nav-link-custom">AI Plan</Nav.Link>
             <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
+            <Nav.Link as={Link} to="/ingred" className="nav-link-custom">Get Recipe</Nav.Link>
           </Nav>
           <div className="ml-auto">
             {/* Logout button */}
