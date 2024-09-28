@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link,useNavigate } from 'react-router-dom'; // Import Link from react-router-dom
 import "../styles/NavBar.css"; // Import custom CSS
 
 

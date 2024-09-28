@@ -78,17 +78,9 @@ const App = () => {
                 <Exercises />
               </ProtectedRoute>
             } />
-             <Route path="/tracker" element={
+            <Route path="/tracker" element={
               <ProtectedRoute>
                 <SleepCycleTracker />
-              </ProtectedRoute>
-            } />
-              <ProtectedRoute>
-                <Exercises />
-              </ProtectedRoute>
-            } />
-              <ProtectedRoute>
-                <Exercises />
               </ProtectedRoute>
             } />
             <Route path="/ingred" element={
