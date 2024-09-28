@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json())
 
 const cohere = new CohereClient({
-  token: "Z7ZNvsIBPGsntSEDJTpJfSNrGaDJC7B14W2HZLoe",
+  token: "Xr0JPausbLhiYIPPejNmGvjG1OQK3dAz24uaIID7",
 });
 
 
