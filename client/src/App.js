@@ -12,10 +12,8 @@ import Sleeptracker from './pages/Sleeptracker'; // Import Sleeptracker
 import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
-import Addrecipe from './pages/Addrecipe'
 import FoodOfTheDay from './pages/suggesttt'
 import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
-import Ingcards from './pages/ingredcards'
 import './styles/recipe.css'
 import './styles/ingred.css'
 import './styles/designforlogin.css';
@@ -88,19 +86,9 @@ const App = () => {
                 <Addingred />
               </ProtectedRoute>
             } />
-            <Route path="/recipe" element={
-              <ProtectedRoute>
-                <Addrecipe />
-              </ProtectedRoute>
-            } />
             <Route path="/gif" element={
               <ProtectedRoute>
                 <Gif />
-              </ProtectedRoute>
-            } />
-            <Route path="/cards" element={
-              <ProtectedRoute>
-                <Ingcards />
               </ProtectedRoute>
             } />
             <Route path="/suggest" element={

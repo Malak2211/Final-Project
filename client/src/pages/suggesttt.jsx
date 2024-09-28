@@ -45,10 +45,16 @@ const FoodOfTheDay = () => {
 
   return (
     <div>
-      <h1>Food of the Day</h1>
-      <p>Today is {new Date().toLocaleDateString('en-us', { weekday: 'long' })}, so enjoy some food!</p>
-      <p>{food.description}</p>
-      {food.image && <img src={food.image} alt="Food of the day" style={{ width: '300px', height: 'auto' }} />}
+      <h1 className='foodofday'>Food of the Day</h1>
+      <div className='suggest-container'>
+        <div className='suggest-text'>
+        <p className='suggestfood'>Today is {new Date().toLocaleDateString('en-us', { weekday: 'long' })}, so enjoy some food!</p>
+        <p>{food.description}</p>
+        </div>
+
+          {food.image && <img src={food.image} alt="Food of the day" style={{ width: '300px', height: 'auto' }} />}
+      </div>
+
     </div>
   );
 };

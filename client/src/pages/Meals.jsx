@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/Meals.css'; 
+import '../pages/Meals.css'; 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
 import {useRef} from "react";
@@ -81,12 +81,14 @@ function Meals() {
       <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
         <input 
           type="text" 
+          className='meal'
           placeholder="Enter Country Name" 
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        
       </div>
+      <button className='searching_button' type="submit">Submit</button>
     </form>
 
 
@@ -94,7 +96,7 @@ function Meals() {
 
       <div className="meal_container">
         {meals.length === 0 ?(
-          <p>No meals available. Click the button to fetch meals.</p>
+          <p8>No meals available. Click the button to fetch meals.</p8>
         ) : (
           meals.map((item, index) => (
             <div className='meal_card' key={index}>
