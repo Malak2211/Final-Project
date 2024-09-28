@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Meals from './pages/Meals';
 import Calories from './pages/Calories';    
 import SuggestPlan from './pages/SuggestPlan'; 
+import SleepCycleTracker from './pages/SleepCycleTracker';
 import Exercises from './pages/Exercises';   
 import Gif from './pages/gif'; // Import the component you want to navigate to
 import Sleeptracker from './pages/Sleeptracker'; // Import Sleeptracker
@@ -36,8 +37,12 @@ const Layout = ({ children }) => {
   );
 };
 
+// App component definition
 const App = () => {
   return (
+
+          
+    
     <div className="App">
       <Router>
         <Layout>
@@ -69,6 +74,19 @@ const App = () => {
               </ProtectedRoute>
             } />
             <Route path="/exercises" element={
+              <ProtectedRoute>
+                <Exercises />
+              </ProtectedRoute>
+            } />
+             <Route path="/tracker" element={
+              <ProtectedRoute>
+                <SleepCycleTracker />
+              </ProtectedRoute>
+            } />
+              <ProtectedRoute>
+                <Exercises />
+              </ProtectedRoute>
+            } />
               <ProtectedRoute>
                 <Exercises />
               </ProtectedRoute>

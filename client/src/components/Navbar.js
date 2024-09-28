@@ -1,7 +1,8 @@
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate from react-router-dom
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import "../styles/NavBar.css"; // Import custom CSS
+
 
 const NavBar = () => {
   const navigate = useNavigate(); // Get the navigate function from React Router
@@ -21,6 +22,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/meals" className="nav-link-custom">Recipe Meals</Nav.Link>
             <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
             <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
+            <Nav.Link as={Link} to="/Tracker" className="nav-link-custom">Sleep Tracker</Nav.Link>
             <Nav.Link as={Link} to="/ingred" className="nav-link-custom">Get Recipe</Nav.Link>
             <Nav.Link as={Link} to="/suggest" className="nav-link-custom">Today's meal</Nav.Link>
           </Nav>
@@ -35,3 +37,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
