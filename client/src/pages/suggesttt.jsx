@@ -37,7 +37,7 @@ const FoodOfTheDay = () => {
   useEffect(() => {
     const today = new Date().toLocaleString('en-us', { weekday: 'long' });
     setFood(foodSchedule[today]);
-  }, []); // Empty dependency array to run effect only once
+  }, []); 
 
   if (!food) {
     return <div>Loading...</div>;

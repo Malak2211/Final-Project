@@ -1,15 +1,13 @@
 body {
-  background-image: url('/public/icons/back.jpg');
+    background-image: url('/public/icons/back.jpg');
   background-size: cover;
   height: 100%;
   width: 100%;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Make the background fixed */
   background-position: center;
   background-size: 100% auto;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,6 +16,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "source-code-pro"," Menlo"," Monaco", "Consolas", 'Courier New',
     monospace;
 }

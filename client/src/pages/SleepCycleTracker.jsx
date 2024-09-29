@@ -7,10 +7,10 @@ const SleepCycleTracker = () => {
   const [totalSleepHours, setTotalSleepHours] = useState(0);
 
   const calculateSleepTimes = () => {
-    if (!wakeUpTime) return; // Prevent calculation if no time is set
+    if (!wakeUpTime) return;
 
     const wakeUpDate = new Date(`1970-01-01T${wakeUpTime}:00`);
-    const cycles = 6; // Maximum of 6 cycles (9 hours)
+    const cycles = 6;
     const newSleepTimes = [];
 
     for (let i = 1; i <= cycles; i++) {
@@ -19,7 +19,7 @@ const SleepCycleTracker = () => {
     }
 
     setSuggestedSleepTimes(newSleepTimes);
-    setTotalSleepHours(cycles * 1.5); // Each cycle is 1.5 hours
+    setTotalSleepHours(cycles * 1.5);
   };
 
   return (

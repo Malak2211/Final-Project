@@ -7,14 +7,14 @@ import Calories from './pages/Calories';
 import SuggestPlan from './pages/SuggestPlan'; 
 import SleepCycleTracker from './pages/SleepCycleTracker';
 import Exercises from './pages/Exercises';   
-import Gif from './pages/gif'; // Import the component you want to navigate to
-import Sleeptracker from './pages/Sleeptracker'; // Import Sleeptracker
+import Gif from './pages/gif';
+import Sleeptracker from './pages/Sleeptracker'; 
 import Login from './Items/Login';
 import Signup from './Items/Signup';
 import Addingred from './pages/getingred'
 import Addrecipe from './pages/Addrecipe'
 import FoodOfTheDay from './pages/suggesttt'
-import ProtectedRoute from './components/ProtectedRoute'; // Import ProtectedRoute
+import ProtectedRoute from './components/ProtectedRoute'; 
 import Ingcards from './pages/ingredcards'
 import './styles/recipe.css'
 import './styles/ingred.css'
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
   );
 };
 
-// App component definition
+
 const App = () => {
   return (
 

@@ -76,7 +76,7 @@ function Meals() {
   return (
     <div>
       {/* <button onClick={getResponse}>Fetch Meals</button> */}
-
+      
       <form onSubmit={handleSubmit} className="meals_inputs">
       <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
         <input 

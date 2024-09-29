@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import '../styles/Home.css'; // Add your CSS styles here
+import '../styles/Home.css';
 
 const Home = () => (
   <div>
-  {/* Hero Section */}
+ 
   <div className="hero-section" style={{ backgroundImage: `url('/hero.jpg')`, height: '100vh' }}>
     <Container className="text-center text-white d-flex flex-column align-items-center justify-content-center h-100">
       <h1 className="Header__left">WELCOME TO Wagbat Gpt</h1>
@@ -12,7 +12,7 @@ const Home = () => (
     </Container>
   </div>
 
-  {/* Diet & Nutrition Section */}
+ 
   <Container id="diet-nutrition" className="my-5">
     <div className="content row align-items-center">
       <div className="col-md-8">

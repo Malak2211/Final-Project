@@ -5,7 +5,7 @@ function Home(){
     return(
         <div>
             <div className="container">
-                <h1 style={{color:'#84ca01'}}><span style= {{color:'#000'}}> Welcome to</span> Wagapat GPT</h1>
+                <h1 style={{color:'#84ca01'}}><span style= {{color:'#000'}}> Welcome to</span> Wagbat GPT</h1>
                 <h2>Welcome to our web. If you don't know our web so, this some points obout this website. </h2>
                 <div className="container-points">
                     <h3>&#x2022; Miral</h3>

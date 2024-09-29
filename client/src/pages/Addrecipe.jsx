@@ -5,7 +5,7 @@ const AddRecipe = () => {
     const createRecipeElement = (recipe) => {
         const li = document.createElement('li');
         li.textContent = recipe;
-        li.className = 'recipe-item'; // Assigning the CSS class
+        li.className = 'recipe-item';
         return li;
     };
 

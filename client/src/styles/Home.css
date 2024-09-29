@@ -1,28 +1,76 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f8e0ec;
-  margin: 0;
-  padding: 0;
+  background-color: #f8f9fa; 
+  color: #343a40; 
 }
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: #ffffff;
-}
-.Header__container {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5em;
-  color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1em 5vw;
-  width: 100%;
-}
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    color: #ffffff;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+  }
+  
+  .hero-section h1, .hero-section .btn {
+    position: relative;
+    z-index: 2; 
+  }
+  
+  .hero-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgb(38, 6, 155);
+  }
+  
+  .hero-section .btn {
+    padding: 8px 18px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-section .btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+
+  .Header__container {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5em;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 5vw;
+    width: 100%;
+    z-index: 3; 
+  }
+  
 
 .Header__left {
   display: flex;
@@ -54,7 +102,6 @@ body {
   border-radius: 30px;
 }
 
-/* Diet & Nutrition Section */
 #diet-nutrition {
   padding: 3rem 0;
 }
@@ -112,6 +159,7 @@ section p {
   color: #666666;
   line-height: 1.8;
   font-size: 1.1rem;
+  text-indent: 50px;
 }
 
 #diet-nutrition h2 {
@@ -141,4 +189,3 @@ section p {
     height: auto;
   }
 }
-
