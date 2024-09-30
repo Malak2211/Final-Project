@@ -33,7 +33,7 @@ function Meals() {
   const filter = async (value) => {
         newName.current = value;
         console.log(newName.current);
-        const response = await fetch('http://localhost:8080/generate', {
+        const response = await fetch('http://165.22.84.149:8080/generate', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ function Meals() {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/generate', {
+      const response = await fetch('http://165.22.84.149:8080/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

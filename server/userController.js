@@ -36,7 +36,7 @@ const registerUser = async (req, res) => {
     const token = jwt.sign({ email: req.body.email }, 'lol', { expiresIn: '1h' }); // generate verification token
 
     // Send verification email
-    const verificationLink = `http://localhost:8080/verify-email?token=${token}`;
+    const verificationLink = `http://165.22.84.149:8080/verify-email?token=${token}`;
     const mailOptions = {
       from: 'luka.forsure@gmail.com',
       to: req.body.email,

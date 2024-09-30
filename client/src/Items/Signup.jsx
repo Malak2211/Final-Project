@@ -11,7 +11,7 @@ const Signup = () => {
   const[pwd,setPwd] = useState()
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:8080/api/signup',{name,email,pwd:pwd})
+    axios.post('http://165.22.84.149:8080/api/signup',{name,email,pwd:pwd})
     .then(result => {
       console.log(result);
       if (result.data === "Success") {
