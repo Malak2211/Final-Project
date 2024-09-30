@@ -20,7 +20,7 @@ import './styles/recipe.css'
 import './styles/ingred.css'
 import './styles/designforlogin.css';
 import './styles/designforsignup.css';
-
+import'./styles/App.css';
 // Helper component to conditionally render NavBar
 const Layout = ({ children }) => {
   const location = useLocation();

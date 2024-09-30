@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa; 
+  
   color: #343a40; 
 }
   .hero-section {
@@ -107,9 +107,15 @@ body {
 }
 
 #diet-nutrition h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: bold;
+  color: #000000;          
+  font-family: 'Arial', sans-serif; 
+  font-size: 36px;                  
+  font-weight: bold;                
+  padding: 10px 20px;               
+  border-radius: 25px;               
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
+  text-align: center;             
+  margin: 20px 0;
 }
 
 #diet-nutrition p {
@@ -118,11 +124,6 @@ body {
   margin-bottom: 15px;
 }
 
-#diet-nutrition h2 {
-  font-size: 2rem;
-  margin-top: 2.5rem;
-  font-weight: bold;
-}
 
 #diet-nutrition .content {
   margin-bottom: 3rem;
@@ -145,30 +146,45 @@ section p {
 }
 
 #diet-nutrition {
-  background-color: #f0f8ff;
+
   padding: 3rem;
   border-radius: 10px;
 }
 
 #diet-nutrition h1 {
   text-align: left;
-  color: #343a40;
+  color: #000000;
 }
 
 #diet-nutrition p {
-  color: #666666;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  text-indent: 50px;
+  font-size: 20px;        
+  line-height: 1.6;        
+  color: #d8d5d5;           
+  letter-spacing: 0.5px;   
+  text-transform: uppercase;
+  text-align: center;     
+  padding: 20px;         
+  border-radius: 10px;     
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease
 }
 
-#diet-nutrition h2 {
-  color: #1d1e6b;
-  margin-top: 2rem;
-  font-size: 2rem;
+
+#diet-nutrition h2{
+  color: #000000;          
+  font-family: 'Arial', sans-serif; 
+  font-size: 36px;                  
+  font-weight: bold;                
+  padding: 10px 20px;               
+  border-radius: 25px;               
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
+  text-align: center;             
+  margin: 20px 0;
+;
 }
-
-
+#diet-nutrition p:hover {
+  transform: scale(1.07);
+}
 #diet-nutrition img {
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);

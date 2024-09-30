@@ -3,10 +3,11 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f8ff;
+    background:transparent;
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border:1px solid #99bff7;
+    border:1px solid #0000004b;
 }
 
 .input_container {
@@ -27,12 +28,11 @@
     border-color: #007bff;
 }
 
-/* Search button styling */
 .search_btn {
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
-    background-color: #face08;
+    background-color: #0a013a;
     border: none;
     margin-top: 20px;
     border-radius: 20px;
@@ -40,10 +40,9 @@
 }
 
 .search_btn:hover {
-    background-color: #f0c506;
+    background-color: #0609c2;
 }
 
-/* Output container for displaying recipe steps */
 .output_container {
     margin-top: 20px;
     padding: 20px;
@@ -52,7 +51,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Recipe output header */
 .recipe_output h2 {
     font-size: 1.5rem;
     color: #333;

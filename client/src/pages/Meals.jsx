@@ -78,7 +78,8 @@ function Meals() {
       {/* <button onClick={getResponse}>Fetch Meals</button> */}
       
       <form onSubmit={handleSubmit} className="meals_inputs">
-      <div className="meal_input" style={{alignItems: "center", justifyContent: 'center'}}>
+        <div className="back1">
+      <div className="meal_input"  style={{alignItems: "center", justifyContent: 'center'}}>
         <input 
           type="text" 
           placeholder="Enter Country Name" 
@@ -86,6 +87,7 @@ function Meals() {
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button type="submit">Submit</button>
+      </div>
       </div>
     </form>
 

@@ -118,24 +118,34 @@
 
 const ExerciseGrid = () => {
   return (
-    <div style={styles.gridContainer}>
-      {exercises.map((exercise, index) => (
-        <div key={index} style={styles.gridItem}>
-          <img src={exercise.img} alt={exercise.name} style={styles.image} />
-          <p style={styles.caption}>{exercise.name}</p>
-        </div>
-      ))}
+    <div style={styles.container}>
+      <div style={styles.gridContainer}>
+        {exercises.map((exercise, index) => (
+          <div key={index} style={styles.gridItem}>
+            <img src={exercise.img} alt={exercise.name} style={styles.image} />
+            <p style={styles.caption}>{exercise.name}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-
 const styles = {
+  container: {
+    backgroundColor: '#f0f8ff',   
+    borderRadius: '0px',         
+    padding: '30px',                
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+    margin: '0px',            
+    maxWidth: '1500px',             
+    marginLeft: 'auto',              
+    marginRight: 'auto',
+  },
   gridContainer: {
     display: 'grid',
     gridTemplateColumns: 'repeat(4, 1fr)', 
     gap: '20px',
-    padding: '20px',
     justifyItems: 'center',
   },
   gridItem: {
@@ -145,12 +155,12 @@ const styles = {
     width: '150px',
     height: '150px',
     objectFit: 'cover',
-    
   },
   caption: {
     marginTop: '10px',
     fontSize: '1rem',
     fontWeight: 'bold',
+    color:'black'
   },
 };
 
