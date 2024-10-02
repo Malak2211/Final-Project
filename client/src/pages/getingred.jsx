@@ -56,10 +56,10 @@ message: `Provide a detailed description of the dish ${value} with ingredients a
             placeholder="Enter a meal name"
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)} 
-            // onKeyDown={(e) => {
-            //   if (e.key === "Enter")
-            //     setInputValue(e.target.value);
-            // }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter")
+                setIngredients(e.target.value);
+            }}
           />
           <button type='submit' className='search_btn'>Fetch Recipe</button>
         </form>
