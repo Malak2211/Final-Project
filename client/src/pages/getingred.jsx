@@ -28,7 +28,7 @@ const Getrecipe = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-message: `Provide a detailed description of the dish ${value} with ingredients and instructions, but use plain text formatting without any Markdown symbols like ## or **,and nuber each step`
+message: `Provide a detailed description of the dish ${value} with ingredients and instructions, but use plain text formatting without any Markdown symbols like ## or **`
 
         }),
       });

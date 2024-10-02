@@ -1,18 +1,18 @@
 import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import '../styles/Home.css'; 
+import '../styles/Home.css';
 
 const Home = () => (
   <div>
-  {/* Hero Section */}
-  <div className="hero-section" style={{ backgroundImage: `url('/hero.jpg')`, height: '120vh' ,width:"100%"}}>
+ 
+  <div className="hero-section" style={{ backgroundImage: `url public/apple.jpg`, height: '100vh' }}>
     <Container className="text-center text-white d-flex flex-column align-items-center justify-content-center h-100">
       <h1 className="Header__left">WELCOME TO Wagbat Gpt</h1>
       <Button variant="outline-light" className="mt-3" href="#diet-nutrition">Learn More</Button>
     </Container>
   </div>
 
-  {/* Diet & Nutrition Section */}
+ 
   <Container id="diet-nutrition" className="my-5">
     <div className="content row align-items-center">
       <div className="col-md-8">
@@ -24,9 +24,10 @@ const Home = () => (
         <img
   alt="stomach"
   className="img-fluid"
-  height="300"
+  height="200"
   width="300"
-  src="/stomach.jpg"/>
+  src="/stomach.jpg"
+/>
         </div>
       </div>
       <h2>Balanced Diet and Nutritional Guidelines</h2>
