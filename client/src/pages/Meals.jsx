@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../pages/Meals.css'; 
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'; 
@@ -16,6 +16,7 @@ function Meals() {
 
   // let meals = [];
   const newName = useRef("");
+  const dummyNum = useRef(0);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -71,6 +72,14 @@ function Meals() {
       console.error('Error fetching or parsing JSON:', error);  
     }
   };
+
+  useEffect(() => {
+    if (dummyNum.current === 0) {
+      getResponse('all countries');
+      console.log('test');
+    }
+    dummyNum.current = 5;
+  }, []);
 
   
   return (

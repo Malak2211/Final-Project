@@ -5,6 +5,7 @@ h1 {
   font-weight: bold;                
   padding: 10px 20px;               
   border-radius: 25px;               
+  background-color: #ffffffa7;  
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
   text-align: center;             
   margin: 20px 0;                
@@ -19,6 +20,7 @@ h1 {
   text-align: center;     
   padding: 20px;         
   border-radius: 10px;     
+  background-color: #ffffffa7;  
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease              
   }  
