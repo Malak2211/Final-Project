@@ -28,7 +28,7 @@ const Getrecipe = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-message: `Provide a detailed description of the dish ${value} with ingredients and instructions, but use plain text formatting without any Markdown symbols like ## or **,and nuber each step`
+message: `Provide a detailed description of the dish ${value} with ingredients and instructions, but use plain text formatting without any Markdown symbols like ## or **`
 
         }),
       });
@@ -56,6 +56,10 @@ message: `Provide a detailed description of the dish ${value} with ingredients a
             placeholder="Enter a meal name"
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)} 
+            onKeyDown={(e) => {
+              if (e.key === "Enter")
+                setIngredients(e.target.value);
+            }}
           />
           <button type='submit' className='search_btn'>Fetch Recipe</button>
         </form>

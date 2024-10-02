@@ -1,137 +1,123 @@
 .login_container {
-    display:flex;
-    flex-direction: column;
-    margin:auto;
-    margin-top: 35px;
-    background: transparent;
- border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter:blur(3px);
-    border-radius: 20px;   
-    padding-bottom: 30px;
-    width: 440px;
-    height: 85vh;
-  }
-  
-  .header {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap:9px;
-    width:100%;
-    margin-top: 30px;  
-  }
-  
-  .text {
-    color:#000000;
-    font-size: 47px;
-    font-weight: 700;
-  }
-  
-  .underline {
-    width:61px;
-    height:6px;
-    background: #000000;
-    border-radius: 9px;
-  }
-  
-  .inputs {
-    margin-top: 55px;
-    display:flex;
-    flex-direction: column;
-    gap:9px;
-  }
-  
-  .input{
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 400px;
-    height: 50px;
-    background-color: #000000;
-    background: transparent;
-    border-radius: 6px;
+  display:flex;
+  flex-direction: column;
+  margin:auto;
+  margin-top: 35px;
+  background:transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter:blur(3px);
+  border-radius: 20px;   
+  padding-bottom: 30px;
+  width: 440px;
+  height: 85vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.829);
 }
-  .input input{
-    width: 400px;
-    height: 50;
-    border: none;
-    background: transparent;
-    outline: none;
-    color: #ffffff;
-    font-size: 18px;
-}
-  .input {
-    position: relative;
-  }
-  
-  .image{
-    width: 20px; 
-    height: 20px ;
-    margin:0px 15px; 
-    margin-right:10px;
-}
-  
-  
-.forget{
-    padding-bottom: 15%;
-    padding-left: 45px;
-    margin: -27px 5px;
-   
-    color: #000000;
-    font-size: 17px;
 
+.header {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:9px;
+  width:100%;
+  margin-top: 30px;  
 }
-  
-  .forget span {
-    color: #ff0015;
-    cursor: pointer;
-    font-size: 14px;
-  
-  }
-  
-  .forget span:hover {
-    text-decoration: underline;
-  }
-  
-  .buttons {
-    margin-top: 20px;
-  }
 
 
-  .buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 10px;
-    font-size: 1px;
-    border-radius: 30px;
-    cursor: pointer;
-  }
-  
-
-.msg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #700c0c;
-    gap: 10px;
-    margin: -5px 27px;
-
+.text {
+  color: #000000;
+  font-size: 47px;
+  font-weight: 700;
 }
-  
-  .Sign\ Up {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .navigatetosignup {
-    color: #000000;
-    margin-left: 5px;
-    cursor: pointer;
-  }
-  
-  .navigatetosignup:hover {
-    text-decoration: underline;
-  }
-  
+
+.underline {
+  width: 61px;
+  height: 6px;
+  background: #000000;
+  border-radius: 9px;
+}
+
+.inputs {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.input input {
+  width: 100%;
+  height: 50px;
+  border:1px solid #000000;
+  background:transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.267);
+  border-radius: 15px;
+  outline: none;
+  color: #000000;
+  font-size: 18px;
+}
+
+.input {
+  position: relative;
+}
+
+.image {
+  width: 20px;
+  height: 20px;
+  margin: 0px 15px;
+  margin-right: 10px;
+}
+
+.remember {
+  padding-left: 45px;
+  margin-top: -10px;
+  color: #000000;
+  font-size: 17px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  gap: 10px;
+  margin: -5px 27px;
+}
+
+.Login {
+  font-size: 14px;
+  color: #000000;
+}
+
+.navigatetologin {
+  color: #000000;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.navigatetologin:hover {
+  text-decoration: underline;
+}

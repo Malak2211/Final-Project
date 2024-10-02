@@ -3,10 +3,6 @@ import '../pages/Meals.css';
 import { useNavigate } from 'react-router-dom'; 
 import {useRef} from "react";
 
-function text() {
-  return '[{"name": "John","age": 30,"city": "New York"},{"name": "Jane","age": 25,"city": "San Francisco"},{"name": "Mike","age": 35,"city": "Chicago"}]'
-}
-
 function Meals() {
   const [meals, setMeals] = useState([]);
   const [inputValue, setInputValue] = useState('');

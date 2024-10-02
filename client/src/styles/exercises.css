@@ -1,47 +1,82 @@
-/* exercises.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .exercises-container {
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .exercises-container h1{
-    color: #080808;
-  }
-  .exercise h1 {
-    text-align: left;
-    color: #0c8526;
-  }
+  max-width: 1800px;
+  padding: 20px;
+  background-color: #f0f8ff; 
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exercises-container h1{
+  color: #0e355f;
+}
+.exercises-container h2{
+  color: #000;
+}
+.exercises-container h3{
+   color: #000;
+}
+.exercise h1, h2, h3 {
+  text-align: left;
+  color: #10033f; 
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 1.1rem; 
+  color: #666666
+}
+
+.exercise {
+  margin-bottom: 25px; 
+  padding: 1px;
+}
+
+.exercise {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
   
-  h2 {
-    color: #2c3e50;
-    margin-top: 20px;
-  }
-  
-  h3 {
-    color: #34495e;
-    margin-top: 15px;
-  }
-  
-  p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .exercise {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-  }
-  
-  .exercise:last-child {
-    border-bottom: none;
-  }
-  
- .exercise {
-    color: #000;
-    background: transparent;
- } 
+}
+
+button {
+  background-color: #051d38; 
+  color: #ffffff; 
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); 
+}
+
+button:focus {
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); 
+}

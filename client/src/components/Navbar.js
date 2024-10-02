@@ -19,7 +19,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/meals" className="nav-link-custom">Recipe Meals</Nav.Link>
+            <Nav.Link as={Link} to="/meals" className="nav-link-custom">Meals</Nav.Link>
             <Nav.Link as={Link} to="/calories" className="nav-link-custom">Your Calories</Nav.Link>
             <Nav.Link as={Link} to="/exercises" className="nav-link-custom">Exercises</Nav.Link>
             <Nav.Link as={Link} to="/Tracker" className="nav-link-custom">Sleep Tracker</Nav.Link>
@@ -28,7 +28,7 @@ const NavBar = () => {
           </Nav>
           <div className="ml-auto">
             {/* Logout button */}
-            <Button className="btn-sign-in" variant="outline-light" onClick={handleLogout}>Logout</Button>
+            <Button className="btn-sign-in" variant="outline-light" onClick={handleLogout}>Log Out</Button>
           </div>
         </Navbar.Collapse>
       </Container>
@@ -37,4 +37,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
