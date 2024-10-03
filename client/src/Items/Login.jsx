@@ -38,7 +38,7 @@ const Login = () => {
           <img src="./icons/mail.png" alt="email_icon" className="image" />
           <input 
             type="email" 
-            placeholder="Email"
+            placeholder="  Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)} 
           />
@@ -47,16 +47,14 @@ const Login = () => {
           <img src="./icons/lockk.png" alt="lock_icon" className="image" />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="  Password"
             id="password"
             value={pwd}
             onChange={(e) => setPwd(e.target.value)}
           />
         </div>
 
-        <div className="forget" type="link">
-          <span>Forgot Password?</span>
-        </div>
+
 
         <div className="buttons">
           <Button type="submit" className="button">Login</Button>
