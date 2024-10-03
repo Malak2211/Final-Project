@@ -37,14 +37,14 @@ const Signup = () => {
             <img src="./icons/image.png" alt="user_icon" className="image" />
             <input  type="text" 
                     id="username"  
-                    placeholder="Name"
+                    placeholder="  Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className="input">
             <img src="mail.png" alt="email_icon" className="image" />
             <input type="email" 
-                    placeholder="Email" 
+                    placeholder="  Email" 
                     id="email" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/>
@@ -52,15 +52,11 @@ const Signup = () => {
             <div className="input">
             <img src="./icons/lockk.png" alt="lock_icon" className="image" /> 
             <input  type="password" 
-                    placeholder="Password"
+                    placeholder="  Password"
                     id="password"
                     value={pwd}
                     onChange={(e) => setPwd(e.target.value)}/> 
             </div>
-        <div className="remember">
-            <input type="checkbox" name="" id="rememberMe" />
-            <label htmlFor="rememberMe">Remember Me</label>
-        </div>
         <div className="buttons">
             <Button type="submit" className="button">Sign Up</Button>
         </div>

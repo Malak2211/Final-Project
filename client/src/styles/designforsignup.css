@@ -63,9 +63,6 @@
     font-size: 18px;
 }
 
-.input {
-    position: relative;
-}
 
 .image {
     width: 20px;
@@ -74,18 +71,12 @@
     margin-right: 10px;
 }
 
-.remember {
-    padding-left: 45px;
-    margin-top: -10px;
-    color: #000000;
-    font-size: 17px;
-}
 
 .buttons {
     margin-top: 20px;
 }
 
-.buttons {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,12 +94,11 @@
     color: #230404;
     gap: 10px;
     margin: -5px 27px;
+    font-size: 16px;
 }
 
-.Login {
-    font-size: 14px;
-    color: #700c0c;
-}
+
+
 
 .navigatetologin {
     color: #000000;

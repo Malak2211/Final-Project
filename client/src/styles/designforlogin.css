@@ -1,16 +1,16 @@
 .login_container {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  margin:auto;
+  margin: auto;
   margin-top: 35px;
-  background:transparent;
+  background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter:blur(3px);
-  border-radius: 20px;   
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
   padding-bottom: 30px;
   width: 440px;
   height: 85vh;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.829);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.829)
 }
 
 .header {
@@ -54,7 +54,7 @@
 }
 
 .input input {
-  width: 100%;
+  width: 300px;
   height: 50px;
   border:1px solid #000000;
   background:transparent;
@@ -65,9 +65,6 @@
   font-size: 18px;
 }
 
-.input {
-  position: relative;
-}
 
 .image {
   width: 20px;
@@ -76,12 +73,7 @@
   margin-right: 10px;
 }
 
-.remember {
-  padding-left: 45px;
-  margin-top: -10px;
-  color: #000000;
-  font-size: 17px;
-}
+
 
 .buttons {
   margin-top: 20px;
@@ -105,19 +97,16 @@
   color: #000000;
   gap: 10px;
   margin: -5px 27px;
+  font-size: 16px;
 }
 
-.Login {
-  font-size: 14px;
-  color: #000000;
-}
 
-.navigatetologin {
+.navigatetosignup {
   color: #000000;
   margin-left: 5px;
   cursor: pointer;
 }
 
-.navigatetologin:hover {
+.navigatetosignup:hover {
   text-decoration: underline;
 }
