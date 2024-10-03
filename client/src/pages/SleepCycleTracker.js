@@ -6,12 +6,20 @@ const SleepCycleTracker = () => {
   const [suggestedSleepTimes, setSuggestedSleepTimes] = useState([]);
 
   const calculateSleepTimes = () => {
+    if (!wakeUpTime) {
+      alert('Please select a wake-up time.');
+      return; 
+    }
+
     const wakeUpDate = new Date(`1970-01-01T${wakeUpTime}:00`);
-    const cycles = 6; // Maximum of 6 cycles (9 hours)
+    const cycles = 6; 
+    const minimumCycles = 2; 
+    const sleepBuffer = 15 * 60000;
     const newSleepTimes = [];
 
-    for (let i = 1; i <= cycles; i++) {
-      const sleepTime = new Date(wakeUpDate.getTime() - i * 90 * 60000);
+   
+    for (let i = minimumCycles; i <= cycles; i++) {
+      const sleepTime = new Date(wakeUpDate.getTime() - sleepBuffer - i * 90 * 60000);
       newSleepTimes.push(sleepTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
     }
 
